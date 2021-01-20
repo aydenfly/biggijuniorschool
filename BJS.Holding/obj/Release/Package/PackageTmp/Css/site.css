@@ -119,7 +119,7 @@ body {
 
     #menu ul li {
         display: block;
-        padding: 5px 15px;
+        padding: 10px 15px;
         transition: background-color .6s;
     }
 

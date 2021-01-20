@@ -119,7 +119,7 @@ body {
 
     #menu ul li {
         display: block;
-        padding: 5px 15px;
+        padding: 10px 15px;
         transition: background-color .6s;
     }
 
@@ -139,7 +139,7 @@ body {
     align-items: center;
     padding-left: 25px;
     height: 100vh;
-    max-width: 450px;
+    max-width: 452px;
 }
 
     #hero-content .inner-wrapper {
@@ -154,6 +154,7 @@ body {
         font-size: 2em;
         color: #fff;
         margin-bottom: .5em;
+        font-weight: 400;
     }
 
     #hero-content p {
