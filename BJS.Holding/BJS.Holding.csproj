@@ -68,6 +68,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Css\site.css" />
+    <Content Include="Fonts\ftr\ftrabd.svg" />
+    <Content Include="Fonts\ftr\ftrabk.svg" />
+    <Content Include="Images\video_poster.png" />
+    <Content Include="Images\youtube.svg" />
+    <Content Include="Images\facebook.svg" />
+    <Content Include="Images\whatsapp.svg" />
+    <Content Include="Images\twitter.svg" />
+    <Content Include="Images\linkedin.svg" />
     <Content Include="Images\logo_bjs.png" />
     <Content Include="Images\logo_bjs_white.png" />
     <Content Include="Index.html" />
@@ -79,6 +87,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Fonts\ftr\ftrabd.eot" />
+    <Content Include="Fonts\ftr\ftrabd.ttf" />
+    <Content Include="Fonts\ftr\ftrabd.woff" />
+    <Content Include="Fonts\ftr\ftrabd.woff2" />
+    <Content Include="Fonts\ftr\ftrabk.eot" />
+    <Content Include="Fonts\ftr\ftrabk.ttf" />
+    <Content Include="Fonts\ftr\ftrabk.woff" />
+    <Content Include="Fonts\ftr\ftrabk.woff2" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <None Include="Web.Debug.config">
