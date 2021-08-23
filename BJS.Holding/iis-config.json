@@ -1,6 +1,0 @@
-{
-  "IIS-Site-Name": "BJS.Holding",
-  "App-Pool-Name": "BJS.Holding",
-  "IIS-App-Pool-Dot-Net-Version": "v4.0",
-  "bindings": [ "hl.bjs.localhost" ]
-}
