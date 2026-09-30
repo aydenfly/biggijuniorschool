@@ -1,0 +1,327 @@
+@page
+@{
+    Layout = null;
+}
+@model BJS.Master.Pages.IndexModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Home | Biggi Junior School — Pakwach</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="topbar">
+        <a href="/" class="site-logo">
+            <img src="~/Images/logo_bjs_white.png" />
+        </a>
+        <button id="menu-toggler">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+
+    <nav class="navpanel" id="navpanel">
+        <a href="/" data-target="hero"><span>01</span>Home</a>
+        <a href="/about" data-target="about"><span>02</span>About Us</a>
+        <a href="/leadership" data-target="profiles"><span>03</span>Leadership</a>
+        <a href="/history" data-target="history"><span>04</span>History</a>
+        <a href="/gallery" data-target="gallery"><span>05</span>Gallery &amp; Media</a>
+        <a href="/contact" data-target="contact"><span>06</span>Get In Touch</a>
+        <a href="/activities" data-target="activities"><span>07</span>Activities &amp; Facilities</a>
+        <a href="/tuition" data-target="tuition"><span>08</span>Tuition &amp; Fees</a>
+        <a href="/privacy" data-target="privacy"><span>09</span>Privacy &amp; Cookies</a>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div class="hero-banners" id="bannerBox">
+            <div class="banner b1 active">
+                <img src="/images/hero/hero-1-1152.jpg" srcset="/images/hero/hero-1-480.jpg 480w, /images/hero/hero-1-800.jpg 800w, /images/hero/hero-1-1152.jpg 1152w" sizes="100vw" alt="Pupils of Biggi Junior School gathered together outside a thatched hut" width="1152" height="864" fetchpriority="high" decoding="async" onerror="this.remove()">
+            </div>
+            <div class="banner b2">
+                <img src="/images/hero/hero-2-1152.jpg" srcset="/images/hero/hero-2-480.jpg 480w, /images/hero/hero-2-800.jpg 800w, /images/hero/hero-2-1152.jpg 1152w" sizes="100vw" alt="Pupils in school uniform seated and standing in front of the school building" width="1152" height="864" loading="lazy" decoding="async" onerror="this.remove()">
+            </div>
+            <div class="banner b3">
+                <img src="/images/hero/hero-3-1152.jpg" srcset="/images/hero/hero-3-480.jpg 480w, /images/hero/hero-3-800.jpg 800w, /images/hero/hero-3-1152.jpg 1152w" sizes="100vw" alt="Primary 3 pupils holding up name cards at their desks in class" width="1152" height="864" loading="lazy" decoding="async" onerror="this.remove()">
+            </div>
+            <div class="banner b4">
+                <img src="/images/hero/hero-4-1152.jpg" srcset="/images/hero/hero-4-480.jpg 480w, /images/hero/hero-4-800.jpg 800w, /images/hero/hero-4-1152.jpg 1152w" sizes="100vw" alt="A teacher standing at the blackboard with pupils seated at their desks" width="1152" height="864" loading="lazy" decoding="async" onerror="this.remove()">
+            </div>
+            <div class="banner b5">
+                <img src="/images/hero/hero-5-1152.jpg" srcset="/images/hero/hero-5-480.jpg 480w, /images/hero/hero-5-800.jpg 800w, /images/hero/hero-5-1152.jpg 1152w" sizes="100vw" alt="The entrance gate to the Biggi Junior School compound" width="1152" height="864" loading="lazy" decoding="async" onerror="this.remove()">
+            </div>
+        </div>
+
+        <div class="dots" id="dots"></div>
+        <div class="hero-overlay">
+            <div class="hero-left">
+                <div class="site-logo"><img src="~/Images/logo_bjs_white.png" /></div>
+                <h1>Education for a brighter future</h1>
+                <p><em>Biggi Junior School</em> is an ultra-modern junior school based in Pakwach. Established in 2017, we currently have over 200 registered pupils.</p>
+                <p>Our classes run all the way from Nursery up to Primary 7. Our curricular and co-curricular offering is first class, and the overall school environment second to none within the Pakwach area.</p>
+                <ul id="sm-icons">
+                    <li>
+                        <a href="https://www.facebook.com/BiggiJuniorSchool" target="_blank" rel="noopener noreferrer"><img src="~/Images/facebook.svg" /></a>
+                    </li>
+                    <li>
+                        <a href="mailto:info@biggiuganda.com" target="_blank" rel="noopener noreferrer"><img src="~/Images/email.svg" /></a>
+                    </li>
+                    <li>
+                        <a href="https://api.whatsapp.com/send?phone=256755293211" target="_blank" rel="noopener noreferrer"> <img src="~/Images/whatsapp.svg" /></a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCgpxHtVUFLQQI5LgR_dwZFA" target="_blank" rel="noopener noreferrer" rel="nofollow"><img src="~/Images/youtube.svg" /></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="band-white">
+        <div class="wrap about-grid">
+            <div class="about-img"></div>
+            <div class="about-text">
+                <div class="eyebrow">About Biggi Junior School</div>
+                <h2>An ultra-modern school for a brighter future</h2>
+                <p>Biggi Junior School is based in Pakwach. Established in 2022, we have grown to over 200 registered pupils, offering a full education from Nursery through Primary 7 in an environment built on discipline, care, and community.</p>
+                <p>Our teachers and leadership work as one team to keep classrooms full of curiosity, and to make sure that a family's circumstances never decide whether a child gets to learn. Through fundraising and bursary support, we continue extending that promise to more children each year.</p>
+                <div class="stat-row">
+                    <div><strong>2022</strong><span>Year established</span></div>
+                    <div><strong>200+</strong><span>Registered pupils</span></div>
+                    <div><strong>N–P7</strong><span>Nursery to Primary 7</span></div>
+                    <div><strong>Pakwach</strong><span>Location</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFILES / LEADERSHIP -->
+    <section id="profiles" class="band-sage">
+        <div class="wrap">
+            <div class="sect-head">
+                <div class="eyebrow">Leadership</div>
+                <h2>The people guiding Biggi Junior School</h2>
+            </div>
+            <div class="profile-grid">
+                <button class="p-card p1" data-p="0"><div class="fill"></div><div class="p-strip"><b>Hellen Nyilak</b><span>Founder &amp; Director</span></div></button>
+                <button class="p-card p2" data-p="1"><div class="fill"></div><div class="p-strip"><b>Wanadi Melki</b><span>Head Teacher</span></div></button>
+                <button class="p-card p3" data-p="2"><div class="fill"></div><div class="p-strip"><b>Ocakwun Fred</b><span>Dean of Studies</span></div></button>
+                <button class="p-card p4" data-p="3"><div class="fill"></div><div class="p-strip"><b>Pikisa Kenneth</b><span>Head Prefect</span></div></button>
+                <button class="p-card p5" data-p="4"><div class="fill"></div><div class="p-strip"><b>Yikparwoth Fortunate</b><span>Head Girl</span></div></button>
+                <button class="p-card p6" data-p="5"><div class="fill"></div><div class="p-strip"><b>Mungudit Elvis</b><span>Head Boy</span></div></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- HISTORY -->
+    <section id="history" class="band-white">
+        <div class="wrap history">
+            <div class="sect-head">
+                <div class="eyebrow">A bit of the History</div>
+                <h2>As told by the Founder</h2>
+            </div>
+            <p>I, <strong>Hellen Nyilak</strong>, was born and raised deep in the village, where life was hard enough that we sometimes had nothing to eat. The nearest school was at least five miles away, and with no means of transport, we walked there on foot — often missing class altogether when the rains made the roads impassable.</p>
+            <p>My parents could not afford my school fees, so they paid in cassava and maize instead. I sold mangoes and firewood, and worked in other people's gardens, just to raise enough money for my own school fees and help support my siblings.</p>
+            <p>I grew up hearing the elders say "somu ber" — education is good — and I made myself a promise: when I grew up, I would open a school for every child whose family could not afford to pay fees.</p>
+            <p>In 2022, I kept that promise. Biggi Junior School opened its doors in Marama Lower (now Ndaba Village), Marama Parish, Panyimur Sub-County, Jonam County, Pakwach District. Guided by our motto, "Education for a Brighter Future," we set out to make sure every family in this community could send their children to school — believing that education today means a better future for everyone, here and beyond.</p>
+            <p>Most families in this area once depended on fishing on Lake Albert. Since the government's fishing ban on this part of the lake, combined with the region's hot, dry climate, many have been left with almost no way to earn a living.</p>
+            <p>Alongside our academic curriculum, we equip our pupils with practical skills — including book-making, cookery, and soap-making — to give them tools for the future, whatever path they choose.</p>
+            <p>I invite you to join us. Lend a hand, support a child, and help build a brighter future for this community.</p>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="band-gold">
+        <div class="wrap">
+            <div class="sect-head">
+                <div class="eyebrow">Social Wall</div>
+                <h2>Life at Biggi, in pictures</h2>
+            </div>
+            <div class="filters" id="galFilters">
+                <button class="active" data-f="*">All</button>
+                <button data-f=".school">School</button>
+                <button data-f=".students">Students</button>
+                <button data-f=".events">Events</button>
+            </div>
+            <div class="iso-grid" id="galGrid"></div>
+            <div class="cta-row"><a class="btn" href="https://www.youtube.com/channel/UCzIXxvUv0q4pDYLgv3P1eeg" target="_blank" rel="nofollow noopener">Watch more on our YouTube channel</a></div>
+        </div>
+    </section>
+
+    <!-- ACTIVITIES & FACILITIES -->
+    <section id="activities" class="band-slate">
+        <div class="wrap">
+            <div class="sect-head">
+                <div class="eyebrow">Activities &amp; Facilities</div>
+                <h2>Learning that goes beyond the classroom</h2>
+                <p style="margin-top:10px; opacity:.85;">From sports pitches to reading corners, Biggi Junior School gives pupils space to grow physically, socially, and creatively. Explore some of the facilities and activities that make up everyday life here.</p>
+            </div>
+            <div class="filters" id="actFilters">
+                <button class="active" data-f="*">All</button>
+                <button data-f=".sports">Sports</button>
+                <button data-f=".facility">Facilities</button>
+                <button data-f=".clubs">Clubs</button>
+            </div>
+            <div class="iso-grid" id="actGrid"></div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="padding:0;">
+        <div class="map-embed-full">
+            @* <iframe src="https://www.google.com/maps?q=2.3578349665791207,31.359942930950208&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> *@
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3141.949947154748!2d31.3590051585726!3d2.3580899266762536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMsKwMjEnMjkuNiJOIDMxwrAyMSczOC41IkU!5e1!3m2!1sen!2sug!4v1790765875338!5m2!1sen!2sug" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="wrap" style="padding-top:56px; padding-bottom:70px;">
+            <div class="sect-head"><div class="eyebrow">Get in touch</div><h2>We'd love to hear from you</h2></div>
+            <div class="contact-grid">
+                <div>
+                    @if (!Model.SubmissionSuccessful)
+                    {
+                        <form method="post" id="contact-form">
+
+                            <div class="field">
+                                <label asp-for="contact.fullname">Full name</label>
+                                <input asp-for="contact.fullname"
+                                       id="nm"
+                                       autocomplete="name"
+                                       required />
+                                <span asp-validation-for="contact.fullname" class="validation-message"></span>
+                            </div>
+
+                            <div class="field">
+                                <label asp-for="contact.email">Email address</label>
+                                <input asp-for="contact.email"
+                                       id="em"
+                                       type="email"
+                                       autocomplete="email"
+                                       required />
+                                <span asp-validation-for="contact.email" class="validation-message"></span>
+                            </div>
+
+                            <div class="field">
+                                <label asp-for="contact.message">Message</label>
+                                <textarea asp-for="contact.message"
+                                          id="ms"
+                                          rows="6"
+                                          required></textarea>
+                                <span asp-validation-for="contact.message" class="validation-message"></span>
+                            </div>
+
+                            <button class="btn" type="submit">Send enquiry</button>
+
+                        </form>
+                    }
+                    <div id="contact-result" class="hidden"></div>
+                </div>
+                <div>
+                    <h3 style="margin-bottom:10px">Biggi Junior School</h3>
+                    <p>
+                        Ndaba Village, Marama Parish, Panyimur Sub County,<br>
+                        Jonam County, Pakwach District, Uganda.
+                    </p>
+                    <div class="contact-socials">
+                        <p>Tel: <a href="tel:+256755293211">+256755293211</a></p>
+                        <p>Email: <a href="mailto:info@biggiuganda.com">info@biggiuganda.com</a></p>
+                        <p>YouTube: <a href="https://www.youtube.com/channel/UCgpxHtVUFLQQI5LgR_dwZFA" target="_blank" rel="noopener noreferrer">@@BiggiJuniorSchool</a></p>
+                        <p>Facebook: <a href="https://www.facebook.com/BiggiJuniorSchool" target="_blank" rel="noopener noreferrer">@@BiggiJuniorSchool</a></p>
+                        <p>WhatsApp: <a href="https://api.whatsapp.com/send?phone=256755293211" target="_blank" rel="noopener noreferrer">@@BiggiJuniorSchool</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TUITION / FEES -->
+    <section id="tuition" class="band-sand">
+        <div class="wrap donate-box">
+            <div class="eyebrow">Tuition &amp; Fees</div>
+            <h2>Fees, bursaries, and how to give</h2>
+            <p>School fees cover tuition, meals, and learning materials for each term. Detailed termly fee structures by class are shared directly with parents at enrolment and can be requested through the Contacts section below.</p>
+            <p>Every term, some of our brightest pupils risk missing class simply because their families cannot afford tuition or scholastic materials. That's why we run a bursary programme, supported by donors and well-wishers, so that no child's circumstances decide whether they get to learn.</p>
+            <ul class="donate-list">
+                <li>Fund tuition for a pupil in need</li>
+                <li>Provide scholastic materials — books, pens, uniforms</li>
+                <li>Sponsor a full bursary for a term or a year</li>
+                <li>Support general school running costs</li>
+            </ul>
+            <!--<a class="btn gold" href="/#" target="_blank" rel="noopener">Support a bursary</a>-->
+            <button class="btn gold" id="bank-btn" type="button">Support a bursary</button>
+        </div>
+    </section>
+
+    <!-- PRIVACY -->
+    <section id="privacy" class="band-white">
+        <div class="wrap legal">
+            <div class="eyebrow">Legal</div>
+            <h2>Privacy &amp; Cookies</h2>
+            <p>Biggi Junior School respects the privacy of everyone who visits this website, including parents, pupils, donors, and partners.</p>
+            <h4>Information we collect</h4>
+            <p>We only collect information you choose to share with us, such as your name, email, and message when you use our enquiry form.</p>
+            <h4>How we use it</h4>
+            <p>Information submitted through this site is used solely to respond to your enquiry or process your support for the school, and is never sold to third parties.</p>
+            <h4>Cookies</h4>
+            <p>This site may use minimal cookies to remember basic preferences during your visit. No tracking or advertising cookies are used.</p>
+            <h4>Contact us</h4>
+            <p>If you have questions about this policy, please reach out via the enquiry form in our contact section.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="wrap">
+            <div class="foot-grid">
+                <div>
+                    <div>
+                        <a href="/" class="site-logo">
+                            <img src="~/Images/logo_bjs_white.png" />
+                        </a>
+                    </div>
+                    <p style="opacity:.75; font-size:.88rem; margin-top:12px; max-width:32ch;">An ultra-modern junior school in Pakwach, teaching Nursery through Primary 7.</p>
+                </div>
+                <div>
+                    <h5>Explore</h5>
+                    <a href="/about" data-target="about">About Us</a><a href="/leadership" data-target="profiles">Leadership</a><a href="/gallery" data-target="gallery">Gallery &amp; Media</a><a href="/activities" data-target="activities">Activities &amp; Facilities</a>
+                </div>
+                <div>
+                    <h5>Connect</h5>
+                    <a href="/contact" data-target="contact">Get In Touch</a><a href="/tuition" data-target="tuition">Tuition &amp; Fees</a><a href="/privacy" data-target="privacy">Privacy &amp; Cookies</a>
+                    <a href="https://www.youtube.com/channel/UCzIXxvUv0q4pDYLgv3P1eeg" target="_blank" rel="nofollow noopener">YouTube Channel</a>
+                </div>
+            </div>
+            <div class="foot-bottom">
+                <span>© 2026 Biggi Junior School — Pakwach.</span>
+                <span>Built with care for our learners.</span>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scrim" id="scrim"></div>
+    <div class="slidein" id="slidein">
+        <button class="close-x" id="slideClose">✕</button>
+        <div id="slideBody"></div>
+    </div>
+
+    <div class="lb" id="lightbox">
+        <button class="close-x" id="lbClose">✕</button>
+        <div class="stage" id="lbStage"></div>
+    </div>
+
+    <button id="backTop" aria-label="Back to top">↑</button>
+
+    <div id="cookies-directive">
+        <p>This website uses cookies to enhance your browsing experience. See our <a href="#privacy">Privacy &amp; Cookies policy</a>.</p>
+        <span class="cc-close" id="ccClose">✕ Close</span>
+    </div>
+
+    <script src="~/js/site.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "IIS-Site-Name": "BJS.Web",
+  "App-Pool-Name": "BJS.Web",
+  "IIS-App-Pool-Dot-Net-Version": "v4.0",
+  "Physical-Path": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master",
+  "bindings": [ "biggijuniorschool.localhost" ]
+}

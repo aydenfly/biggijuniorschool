@@ -1,0 +1,413 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\bjs.master.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\bjs.master.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\models\\smtpmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\models\\smtpmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\models\\contactmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\models\\contactmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\pages\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\pages\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Pages\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "BJS.Master\\Pages\\Index.cshtml.cs",
+              "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Pages\\Index.cshtml.cs",
+              "RelativeToolTip": "BJS.Master\\Pages\\Index.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-28T20:54:14.437Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BJS.Master",
+              "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\BJS.Master.csproj",
+              "RelativeDocumentMoniker": "BJS.Master\\BJS.Master.csproj",
+              "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\BJS.Master.csproj",
+              "RelativeToolTip": "BJS.Master\\BJS.Master.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-09-30T15:37:52.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SmtpModel.cs",
+              "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Models\\SmtpModel.cs",
+              "RelativeDocumentMoniker": "BJS.Master\\Models\\SmtpModel.cs",
+              "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Models\\SmtpModel.cs",
+              "RelativeToolTip": "BJS.Master\\Models\\SmtpModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-30T15:32:32.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ContactModel.cs",
+              "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Models\\ContactModel.cs",
+              "RelativeDocumentMoniker": "BJS.Master\\Models\\ContactModel.cs",
+              "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Models\\ContactModel.cs",
+              "RelativeToolTip": "BJS.Master\\Models\\ContactModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-30T15:28:01.881Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "BJS.Master\\Pages\\Index.cshtml",
+              "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Pages\\Index.cshtml*",
+              "RelativeToolTip": "BJS.Master\\Pages\\Index.cshtml*",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAAAOoAAACLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-28T20:50:38.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:138:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f53-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:4:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:5:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:6:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:7:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:8:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:9:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:10:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:13:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:14:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:15:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:16:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:17:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:18:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:19:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:20:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:21:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:22:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:23:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:24:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1719965028:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:47:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:106:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:107:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:147:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:151:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:166:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:168:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "web.config",
+              "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\web.config",
+              "RelativeDocumentMoniker": "BJS.Master\\web.config",
+              "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\web.config",
+              "RelativeToolTip": "BJS.Master\\web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-09-28T20:55:38.399Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Pages\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "BJS.Master\\Pages\\_ViewImports.cshtml",
+              "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Pages\\_ViewImports.cshtml",
+              "RelativeToolTip": "BJS.Master\\Pages\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-28T20:55:13.781Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Program.cs",
+              "RelativeDocumentMoniker": "BJS.Master\\Program.cs",
+              "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Program.cs",
+              "RelativeToolTip": "BJS.Master\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-25T21:23:56.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "site.js",
+              "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "BJS.Master\\wwwroot\\js\\site.js",
+              "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "BJS.Master\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-09-25T12:40:47.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "BJS.Master\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "BJS.Master\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAkEAAAAAAAAAAAEwCUEAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-09-25T12:25:20.437Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
