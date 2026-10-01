@@ -63,14 +63,14 @@
             <div class="hero-left">
                 <div class="site-logo"><img src="~/Images/logo_bjs_white.png" /></div>
                 <h1>Education for a brighter future</h1>
-                <p><em>Biggi Junior School</em> is an ultra-modern junior school based in Pakwach. Established in 2017, we currently have over 200 registered pupils.</p>
-                <p>Our classes run all the way from Nursery up to Primary 7. Our curricular and co-curricular offering is first class, and the overall school environment second to none within the Pakwach area.</p>
+                <p><em>Biggi Junior School</em> is an ultra-modern junior school in Ndaba Village, Marama Parish, Panyimur Sub-County, Pakwach District — founded in 2022 out of a promise to give every child a chance to learn, regardless of what their family can afford. Today, we have over 200 registered pupils.</p>
+                <p>Guided by our motto, "Education for a Brighter Future," our classes run all the way from Nursery to Primary 7. Alongside a first-class curricular and co-curricular offering, we equip pupils with practical skills — from book-making to cookery — to prepare them for life beyond the classroom.</p>
                 <ul id="sm-icons">
                     <li>
                         <a href="https://www.facebook.com/BiggiJuniorSchool" target="_blank" rel="noopener noreferrer"><img src="~/Images/facebook.svg" /></a>
                     </li>
                     <li>
-                        <a href="mailto:info@biggiuganda.com" target="_blank" rel="noopener noreferrer"><img src="~/Images/email.svg" /></a>
+                        <a href="mailto:info@biggijuniorschool.com" target="_blank" rel="noopener noreferrer"><img src="~/Images/email.svg" /></a>
                     </li>
                     <li>
                         <a href="https://api.whatsapp.com/send?phone=256755293211" target="_blank" rel="noopener noreferrer"> <img src="~/Images/whatsapp.svg" /></a>
@@ -190,7 +190,6 @@
                             <div class="field">
                                 <label asp-for="contact.fullname">Full name</label>
                                 <input asp-for="contact.fullname"
-                                       id="nm"
                                        autocomplete="name"
                                        required />
                                 <span asp-validation-for="contact.fullname" class="validation-message"></span>
@@ -199,7 +198,6 @@
                             <div class="field">
                                 <label asp-for="contact.email">Email address</label>
                                 <input asp-for="contact.email"
-                                       id="em"
                                        type="email"
                                        autocomplete="email"
                                        required />
@@ -209,14 +207,14 @@
                             <div class="field">
                                 <label asp-for="contact.message">Message</label>
                                 <textarea asp-for="contact.message"
-                                          id="ms"
                                           rows="6"
                                           required></textarea>
                                 <span asp-validation-for="contact.message" class="validation-message"></span>
                             </div>
 
                             <button class="btn" type="submit">Send enquiry</button>
-
+                            <input type="hidden" asp-for="contact.hpToken" aria-label="hp" />
+                            <div asp-validation-summary="All"></div>
                         </form>
                     }
                     <div id="contact-result" class="hidden"></div>
@@ -229,7 +227,7 @@
                     </p>
                     <div class="contact-socials">
                         <p>Tel: <a href="tel:+256755293211">+256755293211</a></p>
-                        <p>Email: <a href="mailto:info@biggiuganda.com">info@biggiuganda.com</a></p>
+                        <p>Email: <a href="mailto:info@biggijuniorschool.com">info@biggijuniorschool.com</a></p>
                         <p>YouTube: <a href="https://www.youtube.com/channel/UCgpxHtVUFLQQI5LgR_dwZFA" target="_blank" rel="noopener noreferrer">@@BiggiJuniorSchool</a></p>
                         <p>Facebook: <a href="https://www.facebook.com/BiggiJuniorSchool" target="_blank" rel="noopener noreferrer">@@BiggiJuniorSchool</a></p>
                         <p>WhatsApp: <a href="https://api.whatsapp.com/send?phone=256755293211" target="_blank" rel="noopener noreferrer">@@BiggiJuniorSchool</a></p>

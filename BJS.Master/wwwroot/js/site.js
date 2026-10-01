@@ -168,8 +168,107 @@
         document.getElementById('ccClose').addEventListener('click', () => { cc.classList.remove('show'); localStorage.setItem('bjs_cookies_ack', '1'); });
     } catch (e) { }
 
-    /* contact form */
-    document.getElementById('contact-form').addEventListener('submit', (e) => {
-        e.preventDefault(); document.getElementById('formNote').classList.add('show'); e.target.reset();
-    });
+    /* contact form — vanilla JS equivalent of processEnqForm */
+    (function () {
+      const form = document.getElementById('contact-form');
+      if (!form) return;
+    
+      const resultBox   = document.getElementById('contact-result');
+      const captchaMsgEl = document.getElementById('captcha-invalid'); // optional, if you add one
+    
+      // Maps a server PropertyName (e.g. "contact.fullname", "Contact.Email", "message")
+      // to the input id actually used in the markup, since the ids here (nm/em/ms)
+      // don't match the model property names 1:1 like the old Keydutor form did.
+      const FIELD_MAP = {
+        fullname: 'nm',
+        email: 'em',
+        message: 'ms'
+      };
+    
+      function resolveFieldId(propertyName) {
+        const key = propertyName.split('.').pop().toLowerCase();
+        return FIELD_MAP[key] || null;
+      }
+    
+      function clearFieldErrors() {
+        form.querySelectorAll('.input-validation-error')
+          .forEach(el => el.classList.remove('input-validation-error'));
+      }
+    
+      function showOverlay() {
+        const overlay = document.createElement('div');
+        overlay.className = 'form-overlay';
+        form.appendChild(overlay);
+        return overlay;
+      }
+    
+      function scrollToResult() {
+        const anchor = (window.innerWidth < 480 && document.getElementById('bio-contact-panel')) || form.closest('section') || form;
+        anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    
+      function showResult(message, variant) {
+        if (!resultBox) return;
+        resultBox.innerHTML = message;
+        resultBox.classList.remove('hidden', 'alert-success', 'alert-danger');
+        resultBox.classList.add('alert', variant === 'success' ? 'alert-success' : 'alert-danger');
+        resultBox.style.display = '';
+      }
+    
+      function processResult(result) {
+        clearFieldErrors();
+    
+        if (result.successful) {
+          scrollToResult();
+          form.style.display = 'none';
+          showResult(result.message, 'success');
+          return;
+        }
+    
+        (result.Errors || []).forEach(err => {
+          const fieldId = resolveFieldId(err.PropertyName || '');
+          const field = fieldId ? document.getElementById(fieldId) : null;
+          if (field) field.classList.add('input-validation-error');
+        });
+    
+        showResult(result.message, 'danger');
+    
+        if (result.captchaInvalid && captchaMsgEl) {
+          captchaMsgEl.classList.add('field-validation-error');
+          captchaMsgEl.textContent = result.captchaInvalidMessage || '';
+          captchaMsgEl.style.display = '';
+        }
+      }
+    
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+    
+        // Native browser validation stands in for jQuery Validate here.
+        // It reads the same `required`/`type=email` constraints already on
+        // the inputs; it won't read ASP.NET's data-val-* attributes the way
+        // jquery.validate.unobtrusive did, so add matching `pattern`/`minlength`
+        // etc. directly on the inputs if you need stricter client-side rules.
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+    
+        const overlay = showOverlay();
+    
+        try {
+          const response = await fetch(form.getAttribute('action') || window.location.href, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'X-Requested-With': 'XMLHttpRequest' }
+          });
+          const result = await response.json();
+          processResult(result);
+        } catch (err) {
+          showResult('Something went wrong sending your message. Please try again.', 'danger');
+        } finally {
+          overlay.remove();
+        }
+      });
+    })();
 } catch (err) { console.error(err); }

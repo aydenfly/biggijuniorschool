@@ -14,7 +14,9 @@ namespace BJS.Master.Pages
 {
     public class IndexModel : PageModel
     {
-        [BindProperty]
+        /// <summary>
+        /// Gets or sets the contact information.
+        /// </summary>
         public ContactModel contact { get; set; } = new();
         public string Message { get; set; }
         public bool SubmissionSuccessful { get; set; }
@@ -31,6 +33,7 @@ namespace BJS.Master.Pages
 
         public void OnGetAsync()
         {
+            contact = new ContactModel();
         }
 
         public async Task<JsonResult> OnPostAsync(ContactModel contact)

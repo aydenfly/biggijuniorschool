@@ -3,36 +3,36 @@
   "WorkspaceRootPath": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\bjs.master.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\bjs.master.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\models\\smtpmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\models\\smtpmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\models\\contactmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\models\\contactmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\models\\smtpmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\models\\smtpmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -50,72 +50,20 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 65,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Pages\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "BJS.Master\\Pages\\Index.cshtml.cs",
               "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Pages\\Index.cshtml.cs",
               "RelativeToolTip": "BJS.Master\\Pages\\Index.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIUAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAADgv2kAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-28T20:54:14.437Z",
               "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BJS.Master",
-              "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\BJS.Master.csproj",
-              "RelativeDocumentMoniker": "BJS.Master\\BJS.Master.csproj",
-              "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\BJS.Master.csproj",
-              "RelativeToolTip": "BJS.Master\\BJS.Master.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-09-30T15:37:52.131Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SmtpModel.cs",
-              "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Models\\SmtpModel.cs",
-              "RelativeDocumentMoniker": "BJS.Master\\Models\\SmtpModel.cs",
-              "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Models\\SmtpModel.cs",
-              "RelativeToolTip": "BJS.Master\\Models\\SmtpModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-30T15:32:32.317Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ContactModel.cs",
-              "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Models\\ContactModel.cs",
-              "RelativeDocumentMoniker": "BJS.Master\\Models\\ContactModel.cs",
-              "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Models\\ContactModel.cs",
-              "RelativeToolTip": "BJS.Master\\Models\\ContactModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-30T15:28:01.881Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Pages\\Index.cshtml",
-              "RelativeDocumentMoniker": "BJS.Master\\Pages\\Index.cshtml",
-              "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Pages\\Index.cshtml*",
-              "RelativeToolTip": "BJS.Master\\Pages\\Index.cshtml*",
-              "ViewState": "AgIAAMMAAAAAAAAAAAAAAOoAAACLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-28T20:50:38.152Z",
               "EditorCaption": ""
             },
             {
@@ -344,6 +292,57 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\appsettings.json",
+              "RelativeDocumentMoniker": "BJS.Master\\appsettings.json",
+              "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\appsettings.json",
+              "RelativeToolTip": "BJS.Master\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-10-01T12:49:24.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SmtpModel.cs",
+              "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Models\\SmtpModel.cs",
+              "RelativeDocumentMoniker": "BJS.Master\\Models\\SmtpModel.cs",
+              "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Models\\SmtpModel.cs",
+              "RelativeToolTip": "BJS.Master\\Models\\SmtpModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-30T15:32:32.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ContactModel.cs",
+              "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Models\\ContactModel.cs",
+              "RelativeDocumentMoniker": "BJS.Master\\Models\\ContactModel.cs",
+              "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Models\\ContactModel.cs",
+              "RelativeToolTip": "BJS.Master\\Models\\ContactModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-30T15:28:01.881Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "BJS.Master\\Pages\\Index.cshtml",
+              "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Pages\\Index.cshtml",
+              "RelativeToolTip": "BJS.Master\\Pages\\Index.cshtml",
+              "ViewState": "AgIAALoAAAAAAAAAAAAAANcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-28T20:50:38.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 8,
               "Title": "web.config",
               "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\web.config",
@@ -368,39 +367,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Program.cs",
               "RelativeDocumentMoniker": "BJS.Master\\Program.cs",
               "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Program.cs",
               "RelativeToolTip": "BJS.Master\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAACgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-25T21:23:56.863Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "site.js",
               "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "BJS.Master\\wwwroot\\js\\site.js",
               "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\wwwroot\\js\\site.js",
               "RelativeToolTip": "BJS.Master\\wwwroot\\js\\site.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGQAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAM4AAAAAAAAAAAAgwN4AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2026-09-25T12:40:47.62Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "site.css",
               "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "BJS.Master\\wwwroot\\css\\site.css",
               "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\wwwroot\\css\\site.css",
               "RelativeToolTip": "BJS.Master\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAAkEAAAAAAAAAAAEwCUEAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAUwHoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2026-09-25T12:25:20.437Z",
               "EditorCaption": ""

@@ -25,6 +25,6 @@ namespace BJS.Master.Models
         public bool requestSubmitted { get; set; }
 
         // Honeypot field
-        public string hpToken { get; set; }
+        public string? hpToken { get; set; } = "";
     }
 }

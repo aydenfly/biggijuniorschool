@@ -1,8 +1,19 @@
+using BJS.Master.Models;
 using Microsoft.AspNetCore.Rewrite;
+using Microsoft.AspNetCore.StaticFiles;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
+builder.Services.Configure<SmtpModel>(builder.Configuration.GetSection("SMTP"));
+builder.Services.Configure<MailjetModel>(builder.Configuration.GetSection("Mailjet"));
+
+builder.Services.Configure<RouteOptions>(options =>
+{
+    options.LowercaseUrls = true;
+    options.LowercaseQueryStrings = true;
+    options.AppendTrailingSlash = false;
+});
 
 var app = builder.Build();
 
@@ -25,7 +36,15 @@ if (!app.Environment.IsDevelopment())
 app.UseStatusCodePagesWithReExecute("/errors/{0}");
 app.UseRewriter(options);
 app.UseHttpsRedirection();
-app.UseStaticFiles();
+app.UseStaticFiles(new StaticFileOptions
+{
+    OnPrepareResponse = SetHttpHeaders()
+});
+app.UseCookiePolicy(new CookiePolicyOptions
+{
+    MinimumSameSitePolicy = SameSiteMode.Strict,
+});
+
 app.UseRouting();
 
 app.MapRazorPages();
@@ -37,3 +56,17 @@ app.MapRazorPages();
 app.MapFallbackToPage("/Index");
 
 app.Run();
+
+static Action<StaticFileResponseContext> SetHttpHeaders()
+{
+    return options =>
+    {
+        var headers = options.Context.Response.GetTypedHeaders();
+        headers.CacheControl = new Microsoft.Net.Http.Headers.CacheControlHeaderValue
+        {
+            Public = true,
+            MaxAge = TimeSpan.FromDays(365)
+        };
+        headers.Expires = new DateTimeOffset(DateTime.UtcNow.AddDays(365));
+    };
+}
