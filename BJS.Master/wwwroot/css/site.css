@@ -749,9 +749,15 @@ section {
         inset: 0;
     }
 
-.p1 .fill {
-    background: linear-gradient(165deg,#2A5C4C,#0E241D);
-}
+        .p-card .fill img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .p1 .fill {
+            background: linear-gradient(165deg,#2A5C4C,#0E241D);
+        }
 
 .p2 .fill {
     background: linear-gradient(165deg,#B9822A,#5C3F13);
