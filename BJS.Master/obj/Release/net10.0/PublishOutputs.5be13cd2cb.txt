@@ -1,0 +1,14 @@
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\PubTmp\Out\htmlTemplates\EmailConfirmation.html
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\PubTmp\Out\BJS.Master.exe
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\PubTmp\Out\web.config
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\PubTmp\Out\appsettings.Development.json
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\PubTmp\Out\appsettings.json
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\PubTmp\Out\dotnet-tools.json
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\PubTmp\Out\site-config.json
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\PubTmp\Out\BJS.Master.dll
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\PubTmp\Out\BJS.Master.deps.json
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\PubTmp\Out\BJS.Master.runtimeconfig.json
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\PubTmp\Out\BJS.Master.pdb
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\PubTmp\Out\HtmlAgilityPack.NetCore.dll
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\PubTmp\Out\Mailjet.Client.dll
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\PubTmp\Out\Newtonsoft.Json.dll
