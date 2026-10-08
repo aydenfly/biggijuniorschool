@@ -60,10 +60,6 @@
             "Mailjet.Api": {
               "target": "Package",
               "version": "[4.0.1, )"
-            },
-            "Microsoft.jQuery.Unobtrusive.Ajax": {
-              "target": "Package",
-              "version": "[3.2.6, )"
             }
           },
           "imports": [

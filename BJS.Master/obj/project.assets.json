@@ -11,9 +11,6 @@
           "lib/netstandard1.3/HtmlAgilityPack.NetCore.dll": {}
         }
       },
-      "jQuery/1.8.0": {
-        "type": "package"
-      },
       "Mailjet.Api/4.0.1": {
         "type": "package",
         "dependencies": {
@@ -24,12 +21,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/Mailjet.Client.dll": {}
-        }
-      },
-      "Microsoft.jQuery.Unobtrusive.Ajax/3.2.6": {
-        "type": "package",
-        "dependencies": {
-          "jQuery": "1.8.0"
         }
       },
       "Newtonsoft.Json/13.0.4": {
@@ -61,25 +52,6 @@
         "lib/netstandard1.3/HtmlAgilityPack.NetCore.dll"
       ]
     },
-    "jQuery/1.8.0": {
-      "sha512": "laDFQRJrIRHT0Z0GVYklMt3bE0iu0MZFJwHwg21kt3SHb7Bj8TdNiM3K+ZdK1DzB8ZxKy8z7NkJvwMas+dmHBw==",
-      "type": "package",
-      "path": "jquery/1.8.0",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Content/Scripts/jquery-1.8.0-vsdoc.js",
-        "Content/Scripts/jquery-1.8.0.js",
-        "Content/Scripts/jquery-1.8.0.min.js",
-        "Tools/common.ps1",
-        "Tools/install.ps1",
-        "Tools/jquery-1.8.0.intellisense.js",
-        "Tools/uninstall.ps1",
-        "jquery.1.8.0.nupkg.sha512",
-        "jquery.nuspec"
-      ]
-    },
     "Mailjet.Api/4.0.1": {
       "sha512": "ndAd6cuev145nSYomq6BvtRQ4yfAGzM7f40JnqQf1wJMa1lB6/wDxTu6jsJRPD5JjtS1BXSELkVjKyJp/xfLvw==",
       "type": "package",
@@ -90,19 +62,6 @@
         "lib/netstandard2.0/Mailjet.Client.dll",
         "mailjet.api.4.0.1.nupkg.sha512",
         "mailjet.api.nuspec"
-      ]
-    },
-    "Microsoft.jQuery.Unobtrusive.Ajax/3.2.6": {
-      "sha512": "udg7ZBszgqxloQ+ShJRONKQAzPnJIlUhKZB+AIvZdKh7CDc5Nms69T9X0hN5i+NqMmQE6njkzdCcEb16lPdJTw==",
-      "type": "package",
-      "path": "microsoft.jquery.unobtrusive.ajax/3.2.6",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Content/Scripts/jquery.unobtrusive-ajax.js",
-        "Content/Scripts/jquery.unobtrusive-ajax.min.js",
-        "microsoft.jquery.unobtrusive.ajax.3.2.6.nupkg.sha512",
-        "microsoft.jquery.unobtrusive.ajax.nuspec"
       ]
     },
     "Newtonsoft.Json/13.0.4": {
@@ -139,8 +98,7 @@
   "projectFileDependencyGroups": {
     "net10.0": [
       "HtmlAgilityPack.NetCore >= 1.5.0.1",
-      "Mailjet.Api >= 4.0.1",
-      "Microsoft.jQuery.Unobtrusive.Ajax >= 3.2.6"
+      "Mailjet.Api >= 4.0.1"
     ]
   },
   "packageFolders": {
@@ -203,10 +161,6 @@
           "Mailjet.Api": {
             "target": "Package",
             "version": "[4.0.1, )"
-          },
-          "Microsoft.jQuery.Unobtrusive.Ajax": {
-            "target": "Package",
-            "version": "[3.2.6, )"
           }
         },
         "imports": [
@@ -645,57 +599,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'jQuery' 1.8.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-2pqj-h3vj-pqgw",
-      "libraryId": "jQuery",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    },
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'jQuery' 1.8.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-6c3j-c64m-qhgq",
-      "libraryId": "jQuery",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    },
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'jQuery' 1.8.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-jpcq-cgw6-v4j6",
-      "libraryId": "jQuery",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    },
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'jQuery' 1.8.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-q4m3-2j7h-f7xw",
-      "libraryId": "jQuery",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    },
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'jQuery' 1.8.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-rmxg-73gg-4p98",
-      "libraryId": "jQuery",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    }
-  ]
+  }
 }

@@ -55,104 +55,124 @@
     setInterval(() => show((bi + 1) % banners.length), 4200);
 
     /* profiles slide-in */
-    const bios = [
-        {
-            n: 'Hellen Nyilak', r: 'Founder & Director', t: ["Hellen Nyilak founded Biggi Junior School with a simple conviction: every child in Pakwach deserves a strong start in life, regardless of their family's means. Under her leadership, the school has grown into a nurturing home for learners from baby class through primary seven.",
-                "Hellen continues to guide the school's vision, working closely with teachers, parents, and partners to ensure every child is fed, taught, and cared for. She is especially passionate about fundraising for tuition, scholastic materials, and bursaries, and warmly welcomes donors to join this journey."]
-        },
-        {
-            n: 'Wanadi Melki', r: 'Head Teacher', t: ["As Head Teacher, Wanadi Melki oversees daily life and learning at Biggi Junior School, ensuring every classroom from baby class to primary seven runs smoothly and that pupils and staff are supported to do their best work.",
-                "Wanadi works closely with teachers to maintain high standards of teaching and welfare, and is a strong advocate for the school's bursary and fundraising programs, knowing how access to basic materials can keep a child in school."]
-        },
-        {
-            n: 'Ocakwun Fred', r: 'Dean of Studies', t: ["Ocakwun Fred serves as Dean of Studies, responsible for shaping and monitoring the academic program across all classes, working closely with teachers to plan curriculum delivery and track pupil performance.",
-                "Fred is committed to raising academic standards while ensuring no child falls behind for lack of resources, and believes strongly in community partnerships and donor support to keep every learner progressing."]
-        },
-        {
-            n: 'Pikisa Kenneth', r: 'Head Prefect', t: ["Pikisa Kenneth serves as Head Prefect, representing fellow pupils and helping keep order, discipline, and school spirit alive both in and out of the classroom, setting a strong example in punctuality and respect.",
-                "Kenneth helps bridge the gap between pupils and staff, ensuring student concerns are heard — a leadership style that reflects the values Biggi hopes to instill in every child."]
-        },
-        {
-            n: 'Yikparwoth Fortunate', r: 'Head Girl', t: ["Yikparwoth Fortunate proudly serves as Head Girl, guiding fellow girl pupils with confidence and warmth, often the first to encourage younger girls to stay focused on their studies and believe in what they can achieve.",
-                "Fortunate's leadership is a reminder of why continued support for tuition and scholastic materials matters — every girl she mentors deserves the same chance to learn, lead, and dream big."]
-        },
-        {
-            n: 'Mungudit Elvis', r: 'Head Boy', t: ["Mungudit Elvis holds the position of Head Boy, looked up to by fellow pupils for his discipline, leadership, and dedication to his studies, playing an active role in maintaining order around the school.",
-                "Elvis represents the promise of every child at Biggi Junior School — a promise that depends on continued donor support to keep classrooms stocked, tuition covered, and doors open for pupils like him."]
-        }
-    ];
-    const scrim = document.getElementById('scrim'), slidein = document.getElementById('slidein'), slideBody = document.getElementById('slideBody');
-    document.querySelectorAll('.p-card').forEach(c => c.addEventListener('click', () => {
-        const p = bios[+c.dataset.p];
-        slideBody.innerHTML = `<h3>${p.n}</h3><span class="role">${p.r}</span>` + p.t.map(x => `<p>${x}</p>`).join('');
-        slidein.classList.add('open'); scrim.classList.add('show');
-    }));
+    const scrim = document.getElementById('scrim');
+    const slidein = document.getElementById('slidein');
+    const slideBody = document.getElementById('slideBody');
+    
+    // Profile Cards click event
+    document.querySelectorAll('.p-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const templateId = `bio-${card.dataset.bioId}`;
+            const template = document.getElementById(templateId);
+            
+            if (template) {
+                slideBody.innerHTML = '';
+                slideBody.appendChild(template.content.cloneNode(true));
+                slidein.classList.add('open'); 
+                scrim.classList.add('show');
+            }
+        });
+    });
 
+    // Bank Button click event
     const bankBtn = document.getElementById('bank-btn');
     if (bankBtn) {
         bankBtn.addEventListener('click', () => {
-            slideBody.innerHTML = `<h3>Cheque or Bank Payments</h3>
-      <p>Your contribution towards supporting bursaries is always welcome. If you wish to contribute via Cheque or Bank payments, please pay into the following account.</p>
-      <div class="bank-details">
-        <div><span>Bank:</span> <b>Absa Uganda, Luwum Street Branch</b></div>
-        <div><span>Account Name:</span> <b>Biggi Family Project</b></div>
-        <div><span>Account Number (UGX):</span> <b>6005548274</b></div>
-        <div><span>Account Number (USD):</span> <b>6005548266</b></div>
-        <div><span>SWIFT Code:</span> <b>BARCUGKX</b></div>
-      </div>`;
-            slidein.classList.add('open'); scrim.classList.add('show');
+            const template = document.getElementById('bank-details');
+            
+            if (template) {
+                slideBody.innerHTML = '';
+                slideBody.appendChild(template.content.cloneNode(true));
+                slidein.classList.add('open'); 
+                scrim.classList.add('show');
+            }
         });
     }
     function closeSlide() { slidein.classList.remove('open'); scrim.classList.remove('show'); }
     document.getElementById('slideClose').addEventListener('click', closeSlide);
     scrim.addEventListener('click', () => { closeSlide(); closeLB(); });
 
-    /* grids (plain CSS Grid — no external library required) */
-    function fills(n) { const g = ['b1', 'b2', 'b3', 'b4', 'b5']; return g[n % g.length]; }
-    function buildGrid(el, items) {
-        el.innerHTML = '';
-        items.forEach((it, i) => {
-            const d = document.createElement('div'); d.className = 'iso-item'; d.dataset.cat = it.c;
-            d.innerHTML = `<div class="box ${fills(i)}" data-label="${it.l}"><span>${it.l}</span></div>`;
-            el.appendChild(d);
+    /* grids (plain HTML and CSS Grid with inline icons — no external library required) */
+    const galGrid=document.getElementById('galGrid'), actGrid=document.getElementById('actGrid');
+    function wireFilters(box, grid){
+      box.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{
+        box.querySelectorAll('button').forEach(b=>b.classList.remove('active')); btn.classList.add('active');
+        const f=btn.dataset.f;
+        grid.querySelectorAll('.iso-item').forEach(item=>{
+          const match = f==='*' || ('.'+item.dataset.cat)===f;
+          item.classList.toggle('hide', !match);
         });
-    }
-    const galItems = [
-        { l: 'Morning Assembly', c: 'school' }, { l: 'Baby Class', c: 'students' }, { l: 'Prize Giving Day', c: 'events' }, { l: 'Classroom Block', c: 'school' },
-        { l: 'Reading Time', c: 'students' }, { l: 'Sports Day', c: 'events' }, { l: 'Primary Seven', c: 'students' }, { l: 'School Compound', c: 'school' }
-    ];
-    const actItems = [
-        { l: 'Football Pitch', c: 'sports' }, { l: 'Library Corner', c: 'facility' }, { l: 'Debate Club', c: 'clubs' }, { l: 'Netball Court', c: 'sports' },
-        { l: 'Dining Hall', c: 'facility' }, { l: 'Music Club', c: 'clubs' }, { l: 'Athletics', c: 'sports' }, { l: 'Science Corner', c: 'facility' }
-    ];
-    const galGrid = document.getElementById('galGrid'), actGrid = document.getElementById('actGrid');
-    buildGrid(galGrid, galItems); buildGrid(actGrid, actItems);
-
-    function wireFilters(box, grid) {
-        box.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => {
-            box.querySelectorAll('button').forEach(b => b.classList.remove('active')); btn.classList.add('active');
-            const f = btn.dataset.f;
-            grid.querySelectorAll('.iso-item').forEach(item => {
-                const match = f === '*' || ('.' + item.dataset.cat) === f;
-                item.classList.toggle('hide', !match);
-            });
-        }));
+      }));
     }
     wireFilters(document.getElementById('galFilters'), galGrid);
     wireFilters(document.getElementById('actFilters'), actGrid);
 
-    /* lightbox (fancybox-style) */
-    const lb = document.getElementById('lightbox'), lbStage = document.getElementById('lbStage');
-    document.addEventListener('click', (e) => {
-        const box = e.target.closest('.iso-item .box');
-        if (box) {
-            lbStage.className = 'stage ' + [...box.classList].find(c => c.startsWith('b') && c.length === 2);
-            lbStage.textContent = box.dataset.label; lb.classList.add('open');
-        }
+    /* lightbox slider — click any gallery/activity card to flip through its photo collection.
+   Cards keep their icon as the default grid render; this just supplies the popped-out
+   collection. Real photos live in the markup itself: each .iso-item can hold a hidden
+   .iso-images block of <img> tags — see "Morning Assembly" and "Classroom Block" above
+   for a worked example. Cards with no .iso-images (or none supplied) fall back to
+   generated placeholder frames carrying the card's icon, so nothing breaks while photos
+   are still being gathered. */
+    const lb=document.getElementById('lightbox'), lbSlidesEl=document.getElementById('lbSlides'),
+          lbDotsEl=document.getElementById('lbDots'), lbCounterEl=document.getElementById('lbCounter'),
+          lbPrevBtn=document.getElementById('lbPrev'), lbNextBtn=document.getElementById('lbNext');
+    const SLIDE_COUNT=4;
+    let lbState={slides:[],index:0,label:'',icon:''};
+    
+    function hashStr(s){let h=0; for(let i=0;i<s.length;i++){h=(h*31+s.charCodeAt(i))|0;} return Math.abs(h);}
+    
+    function buildSlides(item, label){
+      const imgs=item.querySelectorAll('.iso-images img');
+      if(imgs.length) return Array.from(imgs).map(img=>({img:{src:img.getAttribute('src'), alt:img.getAttribute('alt')||label}}));
+      const grads=['b1','b2','b3','b4','b5'];
+      const offset=hashStr(label)%grads.length;
+      return Array.from({length:SLIDE_COUNT},(_,i)=>({grad:grads[(offset+i)%grads.length]}));
+    }
+    
+    function renderSlider(){
+      lbSlidesEl.innerHTML=lbState.slides.map((s,i)=>{
+        const active=i===lbState.index?' active':'';
+        if(s.img) return `<div class="lb-slide${active}"><img src="${s.img.src}" alt="${s.img.alt||lbState.label}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div>`;
+        return `<div class="lb-slide ${s.grad}${active}">${lbState.icon?`<svg class="lb-icon" viewBox="0 0 24 24">${lbState.icon}</svg>`:''}<span class="lb-cap">${lbState.label}</span></div>`;
+      }).join('');
+      lbDotsEl.innerHTML=lbState.slides.map((_,i)=>`<button data-i="${i}" class="${i===lbState.index?'active':''}" aria-label="Go to image ${i+1}"></button>`).join('');
+      lbCounterEl.textContent=`${lbState.index+1} / ${lbState.slides.length}`;
+    }
+    
+    function openSlider(box){
+      const item=box.closest('.iso-item');
+      const label=box.dataset.label||'';
+      const iconEl=box.querySelector('.iso-icon');
+      lbState={slides:buildSlides(item, label), index:0, label, icon:iconEl?iconEl.innerHTML:''};
+      renderSlider();
+      lb.classList.add('open');
+    }
+    function closeLB(){ lb.classList.remove('open'); }
+    function stepSlide(dir){
+      if(!lbState.slides.length) return;
+      lbState.index=(lbState.index+dir+lbState.slides.length)%lbState.slides.length;
+      renderSlider();
+    }
+    
+    document.addEventListener('click',(e)=>{
+      const box=e.target.closest('.iso-item .box');
+      if(box){ openSlider(box); }
     });
-    function closeLB() { lb.classList.remove('open'); }
-    document.getElementById('lbClose').addEventListener('click', closeLB);
-    lb.addEventListener('click', (e) => { if (e.target === lb) closeLB(); });
+    document.getElementById('lbClose').addEventListener('click',closeLB);
+    lb.addEventListener('click',(e)=>{ if(e.target===lb) closeLB(); });
+    lbPrevBtn.addEventListener('click',()=>stepSlide(-1));
+    lbNextBtn.addEventListener('click',()=>stepSlide(1));
+    lbDotsEl.addEventListener('click',(e)=>{
+      const b=e.target.closest('button[data-i]');
+      if(b){ lbState.index=+b.dataset.i; renderSlider(); }
+    }); 
+    document.addEventListener('keydown',(e)=>{
+      if(!lb.classList.contains('open')) return;
+      if(e.key==='ArrowRight') stepSlide(1);
+      else if(e.key==='ArrowLeft') stepSlide(-1);
+      else if(e.key==='Escape') closeLB();
+    });
 
     /* back to top */
     const backTop = document.getElementById('backTop');

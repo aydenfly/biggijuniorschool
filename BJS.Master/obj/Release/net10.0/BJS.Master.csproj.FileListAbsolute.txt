@@ -38,7 +38,6 @@ D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\mp8b5b5j5s-{0}-64mc57uuro-64mc57uuro.gz
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\ls2elt1vxw-{0}-bdxdlf5ncl-bdxdlf5ncl.gz
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\wnrdocner5-{0}-lk53gtyypc-lk53gtyypc.gz
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\iqzmdsa3nc-{0}-j87wrjgueq-j87wrjgueq.gz
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\dt4u5utmh9-{0}-h6fnvg8375-h6fnvg8375.gz
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\staticwebassets.build.json
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\staticwebassets.build.json.cache
@@ -57,4 +56,5 @@ D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\bin\Release\net10
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\bin\Release\net10.0\wwwroot\images\profiles\hellen-nyilak-640.jpg
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\bin\Release\net10.0\wwwroot\images\profiles\hellen-nyilak-480.jpg
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\bin\Release\net10.0\wwwroot\images\profiles\hellen-nyilak-320.jpg
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\6mtets1gb7-{0}-ol9ahjdojr-ol9ahjdojr.gz
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\6mtets1gb7-{0}-7jn9dw6m75-7jn9dw6m75.gz
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\iqzmdsa3nc-{0}-ny677b6qb5-ny677b6qb5.gz
