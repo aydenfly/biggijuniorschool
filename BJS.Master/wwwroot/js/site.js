@@ -130,13 +130,21 @@
       return Array.from({length:SLIDE_COUNT},(_,i)=>({grad:grads[(offset+i)%grads.length]}));
     }
     
-    function renderSlider(){
-      lbSlidesEl.innerHTML=lbState.slides.map((s,i)=>{
-        const active=i===lbState.index?' active':'';
-        if(s.img) return `<div class="lb-slide${active}"><img src="${s.img.src}" alt="${s.img.alt||lbState.label}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div>`;
-        return `<div class="lb-slide ${s.grad}${active}">${lbState.icon?`<svg class="lb-icon" viewBox="0 0 24 24">${lbState.icon}</svg>`:''}<span class="lb-cap">${lbState.label}</span></div>`;
+    // Builds the slide DOM once per open — every slide starts un-active (opacity:0 via CSS),
+    // so the first switch to "active" actually has something to transition from.
+    function buildSliderDOM(){
+      lbSlidesEl.innerHTML=lbState.slides.map((s)=>{
+        if(s.img) return `<div class="lb-slide"><img src="${s.img.src}" alt="${s.img.alt||lbState.label}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div>`;
+        return `<div class="lb-slide ${s.grad}">${lbState.icon?`<svg class="lb-icon" viewBox="0 0 24 24">${lbState.icon}</svg>`:''}<span class="lb-cap">${lbState.label}</span></div>`;
       }).join('');
-      lbDotsEl.innerHTML=lbState.slides.map((_,i)=>`<button data-i="${i}" class="${i===lbState.index?'active':''}" aria-label="Go to image ${i+1}"></button>`).join('');
+      lbDotsEl.innerHTML=lbState.slides.map((_,i)=>`<button data-i="${i}" aria-label="Go to image ${i+1}"></button>`).join('');
+    }
+    
+    // Just toggles classes on the existing elements built above — no innerHTML rewrite,
+    // so the CSS opacity transition on .lb-slide/.active actually gets to run.
+    function updateActiveSlide(){
+      lbSlidesEl.querySelectorAll('.lb-slide').forEach((el,i)=>el.classList.toggle('active', i===lbState.index));
+      lbDotsEl.querySelectorAll('button').forEach((el,i)=>el.classList.toggle('active', i===lbState.index));
       lbCounterEl.textContent=`${lbState.index+1} / ${lbState.slides.length}`;
     }
     
@@ -145,14 +153,16 @@
       const label=box.dataset.label||'';
       const iconEl=box.querySelector('.iso-icon');
       lbState={slides:buildSlides(item, label), index:0, label, icon:iconEl?iconEl.innerHTML:''};
-      renderSlider();
+      buildSliderDOM();
       lb.classList.add('open');
+      // wait a frame so the browser registers the un-active state before we fade the first slide in
+      requestAnimationFrame(()=>requestAnimationFrame(updateActiveSlide));
     }
     function closeLB(){ lb.classList.remove('open'); }
     function stepSlide(dir){
       if(!lbState.slides.length) return;
       lbState.index=(lbState.index+dir+lbState.slides.length)%lbState.slides.length;
-      renderSlider();
+      updateActiveSlide();
     }
     
     document.addEventListener('click',(e)=>{
@@ -165,8 +175,8 @@
     lbNextBtn.addEventListener('click',()=>stepSlide(1));
     lbDotsEl.addEventListener('click',(e)=>{
       const b=e.target.closest('button[data-i]');
-      if(b){ lbState.index=+b.dataset.i; renderSlider(); }
-    }); 
+      if(b){ lbState.index=+b.dataset.i; updateActiveSlide(); }
+    });
     document.addEventListener('keydown',(e)=>{
       if(!lb.classList.contains('open')) return;
       if(e.key==='ArrowRight') stepSlide(1);

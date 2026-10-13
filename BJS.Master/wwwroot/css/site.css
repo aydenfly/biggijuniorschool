@@ -970,7 +970,7 @@ section {
 .iso-item .box span {
     position: relative;
     padding: 10px;
-    font-size: .78rem;
+    font-size: .9rem;
     background: rgba(0,0,0,.35);
     width: 100%;
 }
@@ -1027,15 +1027,20 @@ section {
     inset: 0;
     background: rgba(9,12,9,.92);
     z-index: 400;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     padding: 30px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s ease, visibility 0s linear .35s;
 }
 
     .lb.open {
-        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity .35s ease, visibility 0s linear 0s;
     }
 
     .lb .close-x {
@@ -1055,7 +1060,7 @@ section {
 
 .lb-slides {
     position: relative;
-    width: min(560px,90vw);
+    width: max(560px,90vw);
     aspect-ratio: 1/1;
     border-radius: 16px;
     overflow: hidden;
