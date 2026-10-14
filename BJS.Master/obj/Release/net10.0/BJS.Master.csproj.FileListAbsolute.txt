@@ -53,8 +53,5 @@ D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\ref\BJS.Master.dll
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\bin\Release\net10.0\htmlTemplates\EmailConfirmation.html
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\bin\Release\net10.0\dotnet-tools.json
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\bin\Release\net10.0\wwwroot\images\profiles\hellen-nyilak-640.jpg
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\bin\Release\net10.0\wwwroot\images\profiles\hellen-nyilak-480.jpg
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\bin\Release\net10.0\wwwroot\images\profiles\hellen-nyilak-320.jpg
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\6mtets1gb7-{0}-7jn9dw6m75-7jn9dw6m75.gz
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\iqzmdsa3nc-{0}-ny677b6qb5-ny677b6qb5.gz
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\iqzmdsa3nc-{0}-vtoggtt8d4-vtoggtt8d4.gz
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\6mtets1gb7-{0}-4tv3bchkqi-4tv3bchkqi.gz

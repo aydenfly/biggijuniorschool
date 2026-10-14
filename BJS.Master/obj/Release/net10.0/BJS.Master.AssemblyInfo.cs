@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BJS.Master")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0775cd528db3763d0b392b376c6de0c4733077b1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+839d4c68a83f6ef70638167ed1587a9b7b6a2189")]
 [assembly: System.Reflection.AssemblyProductAttribute("BJS.Master")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BJS.Master")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

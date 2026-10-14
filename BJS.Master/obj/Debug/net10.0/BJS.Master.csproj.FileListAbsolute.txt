@@ -53,8 +53,5 @@ D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Debug\net10.0
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Debug\net10.0\BJS.Master.genruntimeconfig.cache
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Debug\net10.0\ref\BJS.Master.dll
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\bin\Debug\net10.0\wwwroot\images\profiles\hellen-nyilak-320.jpg
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\bin\Debug\net10.0\wwwroot\images\profiles\hellen-nyilak-480.jpg
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\bin\Debug\net10.0\wwwroot\images\profiles\hellen-nyilak-640.jpg
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Debug\net10.0\compressed\iqzmdsa3nc-{0}-vtoggtt8d4-vtoggtt8d4.gz
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Debug\net10.0\compressed\6mtets1gb7-{0}-xjv771hhbu-xjv771hhbu.gz
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Debug\net10.0\compressed\6mtets1gb7-{0}-4tv3bchkqi-4tv3bchkqi.gz
