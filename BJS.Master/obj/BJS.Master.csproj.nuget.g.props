@@ -13,4 +13,7 @@
     <SourceRoot Include="C:\Users\edwar\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgBuildBundlerMinifier2022 Condition=" '$(PkgBuildBundlerMinifier2022)' == '' ">C:\Users\edwar\.nuget\packages\buildbundlerminifier2022\2.9.11</PkgBuildBundlerMinifier2022>
+  </PropertyGroup>
 </Project>

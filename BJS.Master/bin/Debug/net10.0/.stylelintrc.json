@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "color-no-invalid-hex": true,
+    "declaration-block-no-duplicate-properties": true,
+    "block-no-empty": true,
+    "unit-no-unknown": true,
+    "property-no-unknown": [true, {"ignoreProperties": ["grid-template-columns", "grid-template-rows", "grid-column"]}],
+    "selector-no-qualifying-type": [true, {"ignore": ["class", "attribute"]}],
+    "max-nesting-depth": 3
+  }
+}

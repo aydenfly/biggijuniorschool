@@ -2,6 +2,16 @@
   "version": 4,
   "targets": {
     "net10.0": {
+      "BuildBundlerMinifier2022/2.9.11": {
+        "type": "package",
+        "dependencies": {
+          "NUglify": "1.21.9",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "build": {
+          "build/BuildBundlerMinifier2022.targets": {}
+        }
+      },
       "HtmlAgilityPack.NetCore/1.5.0.1": {
         "type": "package",
         "compile": {
@@ -35,10 +45,63 @@
             "related": ".xml"
           }
         }
+      },
+      "NUglify/1.21.9": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/NUglify.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/NUglify.dll": {
+            "related": ".xml"
+          }
+        }
       }
     }
   },
   "libraries": {
+    "BuildBundlerMinifier2022/2.9.11": {
+      "sha512": "GlfUxIAS8P6w4Dqq0YYCLfNZ/JNbSLH023vRU1Qwhkw0lUmBsnOdrWL+HJ9YtJ025YV4E/yDrzRGyWREmWTAyg==",
+      "type": "package",
+      "path": "buildbundlerminifier2022/2.9.11",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/BuildBundlerMinifier2022.targets",
+        "buildbundlerminifier2022.2.9.11.nupkg.sha512",
+        "buildbundlerminifier2022.nuspec",
+        "tools/net48/BundlerMinifier.dll",
+        "tools/net48/NUglify.dll",
+        "tools/net48/Newtonsoft.Json.dll",
+        "tools/net6.0/NUglify.dll",
+        "tools/net6.0/Newtonsoft.Json.dll",
+        "tools/net6.0/any/BundlerMinifier.deps.json",
+        "tools/net6.0/any/BundlerMinifier.dll",
+        "tools/net6.0/any/BundlerMinifier.pdb",
+        "tools/net6.0/any/BundlerMinifier.runtimeconfig.json",
+        "tools/net6.0/any/DotnetToolSettings.xml",
+        "tools/net6.0/any/NUglify.dll",
+        "tools/net6.0/any/Newtonsoft.Json.dll",
+        "tools/net8.0/NUglify.dll",
+        "tools/net8.0/Newtonsoft.Json.dll",
+        "tools/net8.0/any/BundlerMinifier.deps.json",
+        "tools/net8.0/any/BundlerMinifier.dll",
+        "tools/net8.0/any/BundlerMinifier.pdb",
+        "tools/net8.0/any/BundlerMinifier.runtimeconfig.json",
+        "tools/net8.0/any/DotnetToolSettings.xml",
+        "tools/net8.0/any/NUglify.dll",
+        "tools/net8.0/any/Newtonsoft.Json.dll",
+        "tools/netcoreapp3.1/BundlerMinifier.dll",
+        "tools/netcoreapp3.1/NUglify.dll",
+        "tools/netcoreapp3.1/Newtonsoft.Json.dll",
+        "tools/netstandard2.0/BundlerMinifier.dll",
+        "tools/netstandard2.0/NUglify.dll",
+        "tools/netstandard2.0/Newtonsoft.Json.dll"
+      ]
+    },
     "HtmlAgilityPack.NetCore/1.5.0.1": {
       "sha512": "UaLQtf8QMM1cxUDPMMBcrgX3A/56P+y4mHidgWaoiieaEG9eyODVRIKt6cQtBZaHLOVX3abGdMGVk2RnlWUAOw==",
       "type": "package",
@@ -93,10 +156,33 @@
         "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
+    },
+    "NUglify/1.21.9": {
+      "sha512": "ULyI/scrIRAo2In6cnaCc/QkWUt+wB6pBVt5lrVddOKyamsCAm1XgArkk4px9tVn6SipjhbTt4M38QPlpoET+g==",
+      "type": "package",
+      "path": "nuglify/1.21.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/NUglify.dll",
+        "lib/net35/NUglify.xml",
+        "lib/net40/NUglify.dll",
+        "lib/net40/NUglify.xml",
+        "lib/net5.0/NUglify.dll",
+        "lib/net5.0/NUglify.xml",
+        "lib/netstandard1.3/NUglify.dll",
+        "lib/netstandard1.3/NUglify.xml",
+        "lib/netstandard2.0/NUglify.dll",
+        "lib/netstandard2.0/NUglify.xml",
+        "nuglify.1.21.9.nupkg.sha512",
+        "nuglify.nuspec",
+        "nuglify.png"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+      "BuildBundlerMinifier2022 >= 2.9.11",
       "HtmlAgilityPack.NetCore >= 1.5.0.1",
       "Mailjet.Api >= 4.0.1"
     ]
@@ -154,6 +240,10 @@
         "framework": "net10.0",
         "targetAlias": "net10.0",
         "dependencies": {
+          "BuildBundlerMinifier2022": {
+            "target": "Package",
+            "version": "[2.9.11, )"
+          },
           "HtmlAgilityPack.NetCore": {
             "target": "Package",
             "version": "[1.5.0.1, )"

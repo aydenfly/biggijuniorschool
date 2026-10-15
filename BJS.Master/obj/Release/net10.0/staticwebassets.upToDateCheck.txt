@@ -12,13 +12,10 @@ wwwroot\fonts\GillSansNovaJL-Medium.woff2
 wwwroot\fonts\GillSansNovaJL-SemiBold.woff
 wwwroot\fonts\GillSansNovaJL-SemiBold.woff2
 wwwroot\fonts\KeydutorGlyph.woff
-wwwroot\fonts\PeignotD-Light.eot
-wwwroot\fonts\PeignotD-Light.otf
-wwwroot\fonts\PeignotD-Light.svg
-wwwroot\fonts\PeignotD-Light.woff
-wwwroot\fonts\PeignotD-Light.woff2
-wwwroot\fonts\PeignotDEE-Bold.woff
-wwwroot\fonts\PeignotDEE-Bold.woff2
+wwwroot\fonts\Dusha V5.woff2
+wwwroot\fonts\Dusha V5.woff
+wwwroot\css\site.min.css
+wwwroot\css\site.css
 wwwroot\icon-16x16.png
 wwwroot\icon-180x180.png
 wwwroot\icon-192x192.png
@@ -34,7 +31,7 @@ wwwroot\images\profiles\wanadi-melki-4k.webp
 wwwroot\images\profiles\wanadi-melki-480.webp
 wwwroot\images\profiles\wanadi-melki-320.webp
 wwwroot\images\profiles\pikisa-kenneth-4k.webp
-wwwroot\images\profiles\pikisa-kenneth-480.webp
+wwwroot\images\profiles\pikisa-kenneth-320.webp
 wwwroot\images\profiles\ocakwun-fred-640.webp
 wwwroot\images\profiles\ocakwun-fred-480.webp
 wwwroot\images\profiles\ocakwun-fred-320.webp
@@ -129,8 +126,7 @@ wwwroot\images\social-wall\baby-class-1-4k.webp
 wwwroot\images\social-wall\assembly-1-4k.webp
 wwwroot\images\profiles\yikparwoth-fortunate-640.webp
 wwwroot\images\profiles\wanadi-melki-640.webp
-wwwroot\images\profiles\pikisa-kenneth-640.webp
-wwwroot\images\profiles\pikisa-kenneth-320.webp
+wwwroot\images\profiles\pikisa-kenneth-480.webp
 wwwroot\images\profiles\ocakwun-fred-4k.webp
 wwwroot\images\profiles\mungudit-elvis-640.webp
 wwwroot\images\profiles\mungudit-elvis-480.webp
@@ -158,12 +154,11 @@ wwwroot\images\activities\debate-club-1-4k.webp
 wwwroot\images\activities\debate-1-4k.webp
 wwwroot\images\activities\athletics-2-4k.webp
 wwwroot\images\activities\athletics-1-4k.webp
-wwwroot\css\site.css
+wwwroot\images\profiles\pikisa-kenneth-640.webp
 wwwroot\js\site.js
+wwwroot\js\site.min.js
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\css\site.css
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\favicon.ico
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\fonts\PeignotD-Light.otf
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\fonts\PeignotD-Light.svg
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\images\email.svg
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\images\facebook.svg
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\images\linkedin.svg
@@ -173,5 +168,7 @@ D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\images\wh
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\images\x.svg
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\images\youtube.svg
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\index.html
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\js\site.js
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\css\site.min.css
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\manifest.json
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\js\site.js
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\js\site.min.js

@@ -26,6 +26,7 @@
             //target.scrollIntoView({ behavior: 'smooth' });
             scrollToSection(target);
             if (window.history && window.history.pushState) { window.history.pushState(null, '', a.getAttribute('href')); }
+            try { updateMetaForSection(a.dataset.target); } catch (err) { /* ignore if function not yet defined */ }
         });
     });
 
@@ -35,14 +36,54 @@
         const p = a.getAttribute('href').replace(/\/+$/, '') || '/';
         pathMap[p] = a.dataset.target;
     });
+
+    // Load mapping of sections to meta content from JSON in the DOM (script#meta-map)
+    let metaMap = {};
+    const _metaMapEl = document.getElementById('meta-map');
+    if (_metaMapEl && _metaMapEl.content) {
+      try {
+        // template.content is a DocumentFragment; use its textContent to get the raw JSON text
+        const raw = (_metaMapEl.content && _metaMapEl.content.textContent) ? _metaMapEl.content.textContent.trim() : '';
+        metaMap = raw ? JSON.parse(raw) : {};
+      } catch (err) {
+        console.error('Failed to parse #meta-map JSON from <template>', err);
+        metaMap = {};
+      }
+    } else if (_metaMapEl) {
+      // Fallback: if template isn't supported, try innerText
+      try { metaMap = JSON.parse(_metaMapEl.innerText || '{}'); } catch (err) { metaMap = {}; }
+    } else {
+      metaMap = {};
+    }
+
+    function updateMetaForSection(id) {
+      const s = metaMap[id] || metaMap['hero'];
+      if (!s) return;
+      try { if (s.title) document.title = s.title; } catch (e) {}
+      const titleEl = document.getElementById('page-title'); if (titleEl) titleEl.textContent = s.title;
+      const desc = document.getElementById('meta-description'); if (desc) desc.setAttribute('content', s.description);
+      const ogt = document.getElementById('og-title'); if (ogt) ogt.setAttribute('content', s.title);
+      const ogd = document.getElementById('og-description'); if (ogd) ogd.setAttribute('content', s.description);
+      const ogu = document.getElementById('og-url'); if (ogu) ogu.setAttribute('content', window.location.href);
+      const ogi = document.getElementById('og-image'); if (ogi) ogi.setAttribute('content', s.image);
+      const twt = document.getElementById('twitter-title'); if (twt) twt.setAttribute('content', s.title);
+      const twd = document.getElementById('twitter-description'); if (twd) twd.setAttribute('content', s.description);
+      const twi = document.getElementById('twitter-image'); if (twi) twi.setAttribute('content', s.image);
+    }
+
     function goToPath(behavior) {
         let p = window.location.pathname.replace(/\/+$/, '') || '/';
         const id = pathMap[p];
         const target = id ? document.getElementById(id) : null;
-        if (target) scrollToSection(target);
+        if (target) { scrollToSection(target); updateMetaForSection(id); }
     }
     goToPath('auto');
-    window.addEventListener('popstate', () => goToPath('smooth'));
+    window.addEventListener('popstate', () => {
+        goToPath('smooth');
+        let p = window.location.pathname.replace(/\/+$/, '') || '/';
+        const id = pathMap[p];
+        if (id) updateMetaForSection(id);
+    });
 
     /* hero banner rotation */
     const banners = document.querySelectorAll('.banner'), dotsBox = document.getElementById('dots');

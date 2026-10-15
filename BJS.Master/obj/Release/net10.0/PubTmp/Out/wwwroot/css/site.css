@@ -31,21 +31,38 @@
 }
 
 @font-face {
-    font-family: 'PeignotD';
-    src: url('/fonts/PeignotD-Light.eot');
-    src: url('/fonts/PeignotD-Light.eot?#iefix') format('embedded-opentype'), url('/fonts/PeignotD-Light.woff2') format('woff2'), url('/fonts/PeignotD-Light.woff') format('woff'), url('/fonts/PeignotD-Light.otf') format('opentype'), url('/fonts/PeignotD-Light.svg#PeignotD-Light') format('svg');
-    font-weight: 300;
+    font-family: 'dushav5';
+    src: url('/fonts/Dusha V5.woff2') format("woff2"),url('/fonts/Dusha V5.woff') format("woff");
+    font-weight: 200;
     font-style: normal;
     font-display: swap;
 }
 
 * {
     font-family: 'bjs', -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-}
-
-* {
     margin: 0;
     padding: 0;
+}
+
+/* ==========================================================
+   Variables & theme tokens
+   Keep colour and layout tokens here so they are easy to find
+   ========================================================== */
+:root {
+    --green: #1F4B3F;
+    --green-dk: #123028;
+    --gold: #D9A441;
+    --gold-dk: #B9822A;
+    --cream: #FBF6EC;
+    --ink: #1B2420;
+    --paper: #FFFFFF;
+    --line: rgba(27,36,32,.12);
+    --band-white: #FFFFFF;
+    --band-sage: #EAF1EC;
+    --band-gold: #FBEED7;
+    --band-slate: #E9EEF1;
+    --band-sand: #F1E7D2;
+    --maxw: 1180px;
 }
 
 .alert {
@@ -194,6 +211,14 @@ body {
     text-transform: uppercase;
 }
 
+    #hero .hero-overlay h1 span {
+        font-family: "dushav5", -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    }
+
+.highlight {
+    color: #EFCA5B;
+}
+
 #hero .hero-overlay p {
     font-size: 1em;
     color: #fff;
@@ -201,24 +226,21 @@ body {
     margin-bottom: 1em;
 }
 
-#hero .hero-overlay ul#sm-icons {
+#hero .hero-overlay #sm-icons {
     list-style: none;
     display: flex;
     margin-top: 2em;
 }
 
-    #hero .hero-overlay ul#sm-icons li {
+    #hero .hero-overlay #sm-icons li {
         min-width: 40px;
         margin-right: 1.5em;
     }
 
-        #hero .hero-overlay ul#sm-icons li a {
+        #hero .hero-overlay #sm-icons li a img {
+            filter: invert(1);
+            max-width: 40px;
         }
-
-            #hero .hero-overlay ul#sm-icons li a img {
-                filter: invert(1);
-                max-width: 40px;
-            }
 
 /* Landscape and Portrait */
 @media only screen and (min-width: 960px) and (max-width: 1440px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
@@ -272,23 +294,7 @@ body {
 }
 
 /* New styling */
-:root {
-    --green: #1F4B3F;
-    --green-dk: #123028;
-    --gold: #D9A441;
-    --gold-dk: #B9822A;
-    --cream: #FBF6EC;
-    --ink: #1B2420;
-    --paper: #FFFFFF;
-    --line: rgba(27,36,32,.12);
-    --band-white: #FFFFFF;
-    --band-sage: #EAF1EC;
-    --band-gold: #FBEED7;
-    --band-slate: #E9EEF1;
-    --band-sand: #F1E7D2;
-    --maxw: 1180px;
-    font-family: 'Karla',sans-serif;
-}
+/* (variables moved to top of file for easier discovery) */
 
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -429,7 +435,6 @@ section {
     justify-content: space-between;
     padding: 14px 28px;
     padding-top: calc(14px + env(safe-area-inset-top,0px));
-    background: rgba(251,246,236,.9);
     background: rgba(0, 0, 0, .9);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--line);
@@ -446,9 +451,6 @@ section {
         transform: translateY(0);
         pointer-events: auto;
     }
-
-:root[data-theme="dark"] .topbar, @media (prefers-color-scheme:dark) {
-}
 
 .navpanel {
     position: fixed;
@@ -758,7 +760,7 @@ section {
 }
 
 .p-card {
-    aspect-ratio: 3/4;
+    aspect-ratio: 4/4;
     border-radius: 16px;
     position: relative;
     overflow: hidden;
@@ -1222,6 +1224,7 @@ section {
 
 
 .contact-grid .contact-details h3 {
+    /* heading styles are defined elsewhere; empty rule removed but kept for future use */
 }
 
 :root[data-theme="dark"] .form-note {
@@ -1274,35 +1277,36 @@ section {
         .contact-socials p img {
             max-width: 20px;
         }
-
         .contact-socials p a {
             text-decoration: none;
             position: relative;
             display: inline-block;
-            padding-bottom: 2px;
+            padding-bottom: 3px;
             color: var(--green);
             border-bottom: 1px solid transparent;
+            transition: color 250ms ease-in-out;
         }
 
-            .contact-socials p a::after {
-                content: "";
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                height: 2px;
-                width: 100%;
-                background: var(--green);
-                transform: scaleX(0);
-                transform-origin: left;
-                transition: transform 500ms ease-in-out;
-            }
+        .contact-socials p a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 100%;
+            background: var(--green);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 500ms ease-in-out;
+        }
 
-            .contact-socials p a:hover::after, .contact-socials p a:focus::after {
-                transform: scaleX(1);
-            }
+        .contact-socials p a:hover::after,
+        .contact-socials p a:focus::after {
+            transform: scaleX(1);
+        }
 /* ===== DONATIONS ===== */
 .donate-box {
-    max-width: 680px;
+    max-width: 700px;
 }
 
     .donate-box h2 {

@@ -8,13 +8,85 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Home | Biggi Junior School — Pakwach</title>
+    <title id="page-title">Home | Biggi Junior School — Pakwach</title>
+    <meta name="description" id="meta-description" content="Biggi Junior School — Education for a brighter future. An ultra-modern junior school in Pakwach, offering Nursery through Primary 7." />
+    <meta property="og:title" id="og-title" content="Home | Biggi Junior School — Pakwach" />
+    <meta property="og:description" id="og-description" content="Biggi Junior School — Education for a brighter future. An ultra-modern junior school in Pakwach, offering Nursery through Primary 7." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" id="og-url" content="https://www.biggijuniorschool.com/" />
+    <meta property="og:image" id="og-image" content="https://www.biggijuniorschool.com/images/hero/hero-1-4k.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" id="twitter-title" content="Home | Biggi Junior School — Pakwach" />
+    <meta name="twitter:description" id="twitter-description" content="Biggi Junior School — Education for a brighter future. An ultra-modern junior school in Pakwach, offering Nursery through Primary 7." />
+    <meta name="twitter:image" id="twitter-image" content="https://www.biggijuniorschool.com/images/hero/hero-1-4k.webp" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/site.min.css" />
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WHC9QD3G');</script>
+    <!-- End Google Tag Manager -->
+
+    <template id="meta-map">
+    {
+      "hero": {
+        "title": "Home | Biggi Junior School — Pakwach",
+        "description": "Biggi Junior School is an ultra-modern junior school in Pakwach offering Nursery through Primary 7 and a commitment to inclusive education.",
+        "image": "https://www.biggijuniorschool.com/images/hero/hero-1-4k.webp"
+      },
+      "about": {
+        "title": "About Us | Biggi Junior School",
+        "description": "Biggi Junior School is based in Pakwach. Established in 2022, we provide Nursery through Primary 7 in a caring, community-driven environment.",
+        "image": "https://www.biggijuniorschool.com/images/hero/hero-2-4k.webp"
+      },
+      "profiles": {
+        "title": "Leadership | Biggi Junior School",
+        "description": "Meet the leadership team guiding Biggi Junior School and the people shaping learning and care for our pupils.",
+        "image": "https://www.biggijuniorschool.com/images/leadership/lead-1.webp"
+      },
+      "history": {
+        "title": "History | Biggi Junior School",
+        "description": "Learn about the founding and growth of Biggi Junior School since 2022.",
+        "image": "https://www.biggijuniorschool.com/images/history/history-1.webp"
+      },
+      "gallery": {
+        "title": "Gallery & Media | Biggi Junior School",
+        "description": "Browse photos and media that showcase school life, events, and learning at Biggi Junior School.",
+        "image": "https://www.biggijuniorschool.com/images/gallery/gallery-1.webp"
+      },
+      "activities": {
+        "title": "Activities & Facilities | Biggi Junior School",
+        "description": "Overview of activities, facilities, and programmes available to pupils at Biggi Junior School.",
+        "image": "https://www.biggijuniorschool.com/images/activities/act-1.webp"
+      },
+      "contact": {
+        "title": "Get In Touch | Biggi Junior School",
+        "description": "Contact Biggi Junior School for enquiries about admissions, visits, or donations.",
+        "image": "https://www.biggijuniorschool.com/images/contact/contact-1.webp"
+      },
+      "tuition": {
+        "title": "Tuition & Fees | Biggi Junior School",
+        "description": "Information about fees, bursaries, and ways to support a pupil at Biggi Junior School.",
+        "image": "https://www.biggijuniorschool.com/images/tuition/tuition-1.webp"
+      },
+      "privacy": {
+        "title": "Privacy & Cookies | Biggi Junior School",
+        "description": "Our privacy and cookie policy including what information we collect and how we use it.",
+        "image": "https://www.biggijuniorschool.com/images/privacy/privacy-1.webp"
+      }
+    }
+    </template>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHC9QD3G"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="topbar">
         <a href="/" class="site-logo">
             <img src="~/Images/logo_bjs_white.png" />
@@ -63,7 +135,7 @@
             <div class="hero-left">
                 <div class="inner-wrapper">
                     <div class="site-logo"><img src="~/Images/logo_bjs_white.png" /></div>
-                    <h1>Education for a brighter future</h1>
+                    <h1>Education for a <span class="highlight">brighter future</span></h1>
                     <p><em>Biggi Junior School</em> is an ultra-modern junior school in Ndaba Village, Marama Parish, Panyimur Sub-County, Pakwach District — founded in 2022 out of a promise to give every child a chance to learn, regardless of what their family can afford. Today, we have over 200 registered pupils.</p>
                     <ul id="sm-icons">
                         <li>
@@ -76,7 +148,7 @@
                             <a href="https://api.whatsapp.com/send?phone=256755293211" target="_blank" rel="noopener noreferrer"> <img src="~/Images/whatsapp.svg" /></a>
                         </li>
                         <li>
-                            <a href="https://www.youtube.com/channel/UCgpxHtVUFLQQI5LgR_dwZFA" target="_blank" rel="noopener noreferrer" rel="nofollow"><img src="~/Images/youtube.svg" /></a>
+                            <a href="https://www.youtube.com/channel/UCgpxHtVUFLQQI5LgR_dwZFA" target="_blank" rel="noopener noreferrer"><img src="~/Images/youtube.svg" /></a>
                         </li>
                     </ul>
                 </div>
@@ -549,7 +621,7 @@
         </div>
     </template>
 
-    <script src="~/js/site.js"></script>
+    <script src="~/js/site.min.js"></script>
 
 </body>
 </html>

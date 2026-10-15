@@ -27,8 +27,6 @@ D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\rjsmcshtml.dswa.cache.json
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\scopedcss\bundle\BJS.Master.styles.css
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\qk2771szmx-{0}-ddkghspkck-ddkghspkck.gz
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\2oun77e1zy-{0}-d2wsbpp8qj-d2wsbpp8qj.gz
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\ziytw4vfzs-{0}-0m6ls6tcln-0m6ls6tcln.gz
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\oeb018oynx-{0}-k4lqid4lip-k4lqid4lip.gz
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\74rsbsndqn-{0}-pnqxeubrrd-pnqxeubrrd.gz
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\kstxwq2zaq-{0}-6nb0bt3lv0-6nb0bt3lv0.gz
@@ -53,5 +51,10 @@ D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\ref\BJS.Master.dll
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\bin\Release\net10.0\htmlTemplates\EmailConfirmation.html
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\bin\Release\net10.0\dotnet-tools.json
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\iqzmdsa3nc-{0}-vtoggtt8d4-vtoggtt8d4.gz
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\6mtets1gb7-{0}-4tv3bchkqi-4tv3bchkqi.gz
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\bin\Release\net10.0\.stylelintrc.json
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\bin\Release\net10.0\bundleconfig.json
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\bin\Release\net10.0\NUglify.dll
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\iqzmdsa3nc-{0}-nuni8p9zew-nuni8p9zew.gz
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\cgde3idhs3-{0}-niefsrg9bq-niefsrg9bq.gz
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\u4uqie46cw-{0}-q42pcox11u-q42pcox11u.gz
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Release\net10.0\compressed\6mtets1gb7-{0}-p7mp7ddkoo-p7mp7ddkoo.gz
