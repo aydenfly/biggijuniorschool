@@ -56,5 +56,5 @@ D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Debug\net10.0
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Debug\net10.0\BJS.Master.genruntimeconfig.cache
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Debug\net10.0\ref\BJS.Master.dll
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\bin\Debug\net10.0\.stylelintrc.json
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Debug\net10.0\compressed\u4uqie46cw-{0}-hlb61urjjv-hlb61urjjv.gz
 D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Debug\net10.0\compressed\6mtets1gb7-{0}-p7mp7ddkoo-p7mp7ddkoo.gz
+D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\obj\Debug\net10.0\compressed\u4uqie46cw-{0}-q42pcox11u-q42pcox11u.gz

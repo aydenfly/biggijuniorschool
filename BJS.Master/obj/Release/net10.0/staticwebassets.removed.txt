@@ -1,7 +1,0 @@
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\fonts\PeignotD-Light.eot
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\fonts\PeignotD-Light.otf
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\fonts\PeignotD-Light.svg
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\fonts\PeignotD-Light.woff
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\fonts\PeignotD-Light.woff2
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\fonts\PeignotDEE-Bold.woff
-D:\Projects\Biggi\BJS\Website\src\biggijuniorschool\BJS.Master\wwwroot\fonts\PeignotDEE-Bold.woff2

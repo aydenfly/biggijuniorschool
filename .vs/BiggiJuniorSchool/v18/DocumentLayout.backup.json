@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|d:\\projects\\biggi\\bjs\\website\\src\\biggijuniorschool\\bjs.master\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{44280158-29C1-4E6A-994F-28D79AFFE8D1}|BJS.Master\\BJS.Master.csproj|solutionrelative:bjs.master\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -9,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 56,
           "Children": [
             {
               "$type": "Bookmark",
@@ -234,6 +239,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "BJS.Master\\Pages\\Index.cshtml",
+              "ToolTip": "D:\\Projects\\Biggi\\BJS\\Website\\src\\biggijuniorschool\\BJS.Master\\Pages\\Index.cshtml",
+              "RelativeToolTip": "BJS.Master\\Pages\\Index.cshtml",
+              "ViewState": "AgIAAE0CAAAAAAAAAAAUwGwCAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-17T16:06:03.763Z",
+              "EditorCaption": ""
             }
           ]
         }
