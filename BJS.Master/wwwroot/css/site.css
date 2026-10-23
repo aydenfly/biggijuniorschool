@@ -680,19 +680,10 @@ section {
     overflow: hidden;
 }
 
-    .about-img::after {
-        content: "BIGGI\A JUNIOR\A SCHOOL";
-        white-space: pre;
-        position: absolute;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        font-size: 1.6rem;
-        color: rgba(255,255,255,.85);
-        font-weight: 600;
-        letter-spacing: .03em;
+    .about-img img {
+        object-fit: contain;
+        max-height: stretch;
+        min-width: stretch;
     }
 
 .eyebrow {
@@ -707,7 +698,7 @@ section {
 .about-text h2 {
     font-size: clamp(1.8rem,3.4vw,2.4rem);
     margin-bottom: 16px;
-    max-width: 14ch;
+    max-width: 20ch;
 }
 
 .about-text p {
@@ -1277,6 +1268,7 @@ section {
         .contact-socials p img {
             max-width: 20px;
         }
+
         .contact-socials p a {
             text-decoration: none;
             position: relative;
@@ -1287,23 +1279,23 @@ section {
             transition: color 250ms ease-in-out;
         }
 
-        .contact-socials p a::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            height: 2px;
-            width: 100%;
-            background: var(--green);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 500ms ease-in-out;
-        }
+            .contact-socials p a::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 2px;
+                width: 100%;
+                background: var(--green);
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 500ms ease-in-out;
+            }
 
-        .contact-socials p a:hover::after,
-        .contact-socials p a:focus::after {
-            transform: scaleX(1);
-        }
+            .contact-socials p a:hover::after,
+            .contact-socials p a:focus::after {
+                transform: scaleX(1);
+            }
 /* ===== DONATIONS ===== */
 .donate-box {
     max-width: 700px;
