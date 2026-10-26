@@ -1,0 +1,34 @@
+{
+  "slides": [
+    {
+      "image": "/images/hero/hero-1-4k.webp",
+      "alt": "Pupils of Biggi Junior School gathered together outside a thatched hut"
+    },
+    {
+      "image": "/images/hero/hero-2-4k.webp",
+      "alt": "Pupils in school uniform seated and standing in front of the school building"
+    },
+    {
+      "image": "/images/hero/hero-3-4k.webp",
+      "alt": "Primary 3 pupils holding up name cards at their desks in class"
+    },
+    {
+      "image": "/images/hero/hero-4-4k.webp",
+      "alt": "A teacher standing at the blackboard with pupils seated at their desks"
+    },
+    {
+      "image": "/images/hero/hero-5-4k.webp",
+      "alt": "The entrance gate to the Biggi Junior School compound"
+    }
+  ],
+  "headingLead": "Education for a",
+  "headingHighlight": "brighter future",
+  "text": "<p><em>Biggi Junior School</em> is an ultra-modern junior school in Ndaba Village, Marama Parish, Panyimur Sub-County, Pakwach District — founded in 2022 out of a promise to give every child a chance to learn, regardless of what their family can afford. Today, we have over 200 registered pupils.</p>",
+  "showSocialIcons": true,
+  "autoplaySeconds": 4,
+  "seo": {
+    "title": "Home | Biggi Junior School — Pakwach",
+    "description": "Biggi Junior School is an ultra-modern junior school in Pakwach offering Nursery through Primary 7 and a commitment to inclusive education.",
+    "image": "/images/hero/hero-1-4k.webp"
+  }
+}

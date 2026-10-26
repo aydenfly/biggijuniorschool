@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
@@ -8,14 +8,19 @@
 
   <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier2022" Version="2.9.11" />
-    <PackageReference Include="HtmlAgilityPack.NetCore" Version="1.5.0.1" />
-    <PackageReference Include="Mailjet.Api" Version="4.0.1" />
-    <!--<PackageReference Include="Microsoft.jQuery.Unobtrusive.Ajax" Version="3.2.6" />-->
+    <!-- Mailjet.Api and HtmlAgilityPack.NetCore were only used to send the contact email.
+         That now happens in the CMS, so the website no longer needs them. -->
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="htmlTemplates\EmailConfirmation.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <!-- Shared content models (same classes the CMS API uses) -->
+    <ProjectReference Include="..\Cms.Contracts\Cms.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Snapshot used only if the CMS cannot be reached before the first successful fetch -->
+    <None Update="App_Data\content-fallback.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

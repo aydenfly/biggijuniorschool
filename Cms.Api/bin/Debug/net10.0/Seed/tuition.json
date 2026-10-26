@@ -1,0 +1,20 @@
+{
+  "eyebrow": "Tuition & Fees",
+  "heading": "Fees, bursaries, and how to give",
+  "text": "<p>School fees cover tuition, meals, and learning materials for each term. Detailed termly fee structures by class are shared directly with parents at enrolment and can be requested through the Contacts section below.</p><p>Every term, some of our brightest pupils risk missing class simply because their families cannot afford tuition or scholastic materials. That's why we run a bursary programme, supported by donors and well-wishers, so that no child's circumstances decide whether they get to learn.</p><ul><li>Fund tuition for a pupil in need</li><li>Provide scholastic materials — books, pens, uniforms</li><li>Sponsor a full bursary for a term or a year</li><li>Support general school running costs</li></ul>",
+  "button": {
+    "label": "Support a bursary",
+    "action": "panel",
+    "url": "",
+    "newTab": false
+  },
+  "panel": {
+    "title": "Cheque or Bank Payments",
+    "text": "<p>Your contribution towards supporting bursaries is always welcome. If you wish to contribute via Cheque or Bank payments, please pay into the following account.</p><p><strong>Bank:</strong> Centenary Bank Limited</p><p><strong>SWIFT / BIC Code:</strong> CERBUGKAXXX</p><p><strong>Account Name:</strong> Biggi Junior School</p><p><strong>Account Number (UGX):</strong> 3100068755</p><p><strong>Bank Address:</strong> Mapeera House, Plot 44-46 Kampala Road, P.O. Box 1892, Kampala, Uganda</p>"
+  },
+  "seo": {
+    "title": "Tuition & Fees | Biggi Junior School",
+    "description": "Information about fees, bursaries, and ways to support a pupil at Biggi Junior School.",
+    "image": ""
+  }
+}

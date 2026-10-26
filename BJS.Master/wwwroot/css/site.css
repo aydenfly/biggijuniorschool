@@ -673,17 +673,26 @@ section {
 }
 
 .about-img {
-    aspect-ratio: 4/5;
+    aspect-ratio: 4/4;
     border-radius: 18px;
     background: linear-gradient(160deg,var(--green),var(--green-dk));
     position: relative;
     overflow: hidden;
 }
 
-    .about-img img {
-        object-fit: contain;
-        max-height: stretch;
-        min-width: stretch;
+    .about-img::after {
+        content: "BIGGI\A JUNIOR\A SCHOOL";
+        white-space: pre;
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 1.6rem;
+        color: rgba(255,255,255,.85);
+        font-weight: 600;
+        letter-spacing: .03em;
     }
 
 .eyebrow {
@@ -1268,7 +1277,6 @@ section {
         .contact-socials p img {
             max-width: 20px;
         }
-
         .contact-socials p a {
             text-decoration: none;
             position: relative;
@@ -1279,23 +1287,23 @@ section {
             transition: color 250ms ease-in-out;
         }
 
-            .contact-socials p a::after {
-                content: '';
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                height: 2px;
-                width: 100%;
-                background: var(--green);
-                transform: scaleX(0);
-                transform-origin: left;
-                transition: transform 500ms ease-in-out;
-            }
+        .contact-socials p a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 100%;
+            background: var(--green);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 500ms ease-in-out;
+        }
 
-            .contact-socials p a:hover::after,
-            .contact-socials p a:focus::after {
-                transform: scaleX(1);
-            }
+        .contact-socials p a:hover::after,
+        .contact-socials p a:focus::after {
+            transform: scaleX(1);
+        }
 /* ===== DONATIONS ===== */
 .donate-box {
     max-width: 700px;
@@ -1465,3 +1473,26 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* ============================================================
+   CMS additions: styles for content that is now editable
+   ============================================================ */
+
+/* About image card: shows an uploaded image, or the editable caption on the green card */
+.about-img[data-caption]::after { content: attr(data-caption); }
+.about-img.has-image::after { display: none; }
+/*.about-img > img { width: 100%; height: 100%; object-fit: cover; display: block; }*/
+
+/* Tuition list is now rich text (a plain <ul>), so it takes the old .donate-list look */
+.donate-box > ul { list-style: none; margin: 22px 0; display: flex; flex-direction: column; gap: 10px; }
+.donate-box > ul li { padding-left: 26px; position: relative; }
+.donate-box > ul li::before { content: "→"; position: absolute; left: 0; color: var(--gold-dk); }
+
+/* Lists and quotes written in the CMS rich-text editor */
+.about-text ul, .history ul, .legal ul, .slidein ul, .about-text ol, .history ol, .legal ol, .slidein ol { margin: 0 0 1em 1.3em; }
+.about-text ul, .history ul, .legal ul, .slidein ul { list-style: disc; }
+.about-text ol, .history ol, .legal ol, .slidein ol { list-style: decimal; }
+.about-text li > p, .history li > p, .legal li > p, .slidein li > p, .donate-box li > p { margin: 0; }
+.history blockquote, .legal blockquote { margin: 0 0 1em; padding-left: 1em; border-left: 3px solid var(--gold); }
+.history h3, .legal h3 { margin: 1.2em 0 .4em; }

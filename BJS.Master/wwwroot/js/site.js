@@ -1,4 +1,4 @@
-﻿try {
+try {
     /* burger nav */
     const burger = document.getElementById('menu-toggler'), navpanel = document.getElementById('navpanel');
     burger.addEventListener('click', () => { burger.classList.toggle('open'); navpanel.classList.toggle('open'); });
@@ -93,7 +93,9 @@
         banners.forEach(b => b.classList.remove('active')); dotsBox.querySelectorAll('button').forEach(d => d.classList.remove('active'));
         banners[i].classList.add('active'); dotsBox.children[i].classList.add('active'); bi = i;
     }
-    setInterval(() => show((bi + 1) % banners.length), 4200);
+    const bannerBox = document.getElementById('bannerBox');
+    const bannerMs = parseInt(bannerBox && bannerBox.dataset.interval, 10) || 4200; // set in the CMS (hero > seconds per slide)
+    if (banners.length > 1) setInterval(() => show((bi + 1) % banners.length), bannerMs);
 
     /* profiles slide-in */
     const scrim = document.getElementById('scrim');

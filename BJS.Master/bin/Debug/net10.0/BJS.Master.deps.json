@@ -9,8 +9,7 @@
       "BJS.Master/1.0.0": {
         "dependencies": {
           "BuildBundlerMinifier2022": "2.9.11",
-          "HtmlAgilityPack.NetCore": "1.5.0.1",
-          "Mailjet.Api": "4.0.1"
+          "Cms.Contracts": "1.0.0"
         },
         "runtime": {
           "BJS.Master.dll": {}
@@ -19,33 +18,14 @@
       "BuildBundlerMinifier2022/2.9.11": {
         "dependencies": {
           "NUglify": "1.21.9",
-          "Newtonsoft.Json": "13.0.4"
+          "Newtonsoft.Json": "13.0.3"
         }
       },
-      "HtmlAgilityPack.NetCore/1.5.0.1": {
-        "runtime": {
-          "lib/netstandard1.3/HtmlAgilityPack.NetCore.dll": {
-            "assemblyVersion": "1.5.0.1",
-            "fileVersion": "1.5.0.1"
-          }
-        }
-      },
-      "Mailjet.Api/4.0.1": {
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.4"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Mailjet.Client.dll": {
-            "assemblyVersion": "4.0.1.0",
-            "fileVersion": "4.0.1.0"
-          }
-        }
-      },
-      "Newtonsoft.Json/13.0.4": {
+      "Newtonsoft.Json/13.0.3": {
         "runtime": {
           "lib/net6.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "13.0.0.0",
-            "fileVersion": "13.0.4.30916"
+            "fileVersion": "13.0.3.27908"
           }
         }
       },
@@ -54,6 +34,14 @@
           "lib/net5.0/NUglify.dll": {
             "assemblyVersion": "1.21.9.0",
             "fileVersion": "1.21.9.0"
+          }
+        }
+      },
+      "Cms.Contracts/1.0.0": {
+        "runtime": {
+          "Cms.Contracts.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       }
@@ -72,26 +60,12 @@
       "path": "buildbundlerminifier2022/2.9.11",
       "hashPath": "buildbundlerminifier2022.2.9.11.nupkg.sha512"
     },
-    "HtmlAgilityPack.NetCore/1.5.0.1": {
+    "Newtonsoft.Json/13.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-UaLQtf8QMM1cxUDPMMBcrgX3A/56P+y4mHidgWaoiieaEG9eyODVRIKt6cQtBZaHLOVX3abGdMGVk2RnlWUAOw==",
-      "path": "htmlagilitypack.netcore/1.5.0.1",
-      "hashPath": "htmlagilitypack.netcore.1.5.0.1.nupkg.sha512"
-    },
-    "Mailjet.Api/4.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ndAd6cuev145nSYomq6BvtRQ4yfAGzM7f40JnqQf1wJMa1lB6/wDxTu6jsJRPD5JjtS1BXSELkVjKyJp/xfLvw==",
-      "path": "mailjet.api/4.0.1",
-      "hashPath": "mailjet.api.4.0.1.nupkg.sha512"
-    },
-    "Newtonsoft.Json/13.0.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-pdgNNMai3zv51W5aq268sujXUyx7SNdE2bj1wZcWjAQrKMFZV260lbqYop1d2GM67JI1huLRwxo9ZqnfF/lC6A==",
-      "path": "newtonsoft.json/13.0.4",
-      "hashPath": "newtonsoft.json.13.0.4.nupkg.sha512"
+      "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "path": "newtonsoft.json/13.0.3",
+      "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
     },
     "NUglify/1.21.9": {
       "type": "package",
@@ -99,6 +73,11 @@
       "sha512": "sha512-ULyI/scrIRAo2In6cnaCc/QkWUt+wB6pBVt5lrVddOKyamsCAm1XgArkk4px9tVn6SipjhbTt4M38QPlpoET+g==",
       "path": "nuglify/1.21.9",
       "hashPath": "nuglify.1.21.9.nupkg.sha512"
+    },
+    "Cms.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

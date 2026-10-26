@@ -1,12 +1,22 @@
 using BJS.Master.Models;
+using BJS.Master.Services;
 using Microsoft.AspNetCore.Rewrite;
 using Microsoft.AspNetCore.StaticFiles;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
-builder.Services.Configure<SmtpModel>(builder.Configuration.GetSection("SMTP"));
-builder.Services.Configure<MailjetModel>(builder.Configuration.GetSection("Mailjet"));
+
+// Content now comes from the CMS API (see the "Cms" section of appsettings.json).
+builder.Services.Configure<CmsOptions>(builder.Configuration.GetSection("Cms"));
+builder.Services.AddHttpClient("cms", c => c.Timeout = TimeSpan.FromSeconds(5))
+    .ConfigurePrimaryHttpMessageHandler(() => new SocketsHttpHandler { PooledConnectionLifetime = TimeSpan.FromMinutes(5) });
+builder.Services.AddSingleton(sp => new CmsClient(
+    sp.GetRequiredService<IHttpClientFactory>().CreateClient("cms"),
+    sp.GetRequiredService<IOptions<CmsOptions>>(),
+    sp.GetRequiredService<ILogger<CmsClient>>(),
+    sp.GetRequiredService<IWebHostEnvironment>()));
 
 builder.Services.Configure<RouteOptions>(options =>
 {

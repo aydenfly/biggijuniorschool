@@ -1,0 +1,178 @@
+{
+  "eyebrow": "Activities & Facilities",
+  "heading": "Learning that goes beyond the classroom",
+  "intro": "<p>From sports pitches to reading corners, Biggi Junior School gives pupils space to grow physically, socially, and creatively. Explore some of the facilities and activities that make up everyday life here.</p>",
+  "allLabel": "All",
+  "cards": [
+    {
+      "id": "football-pitch",
+      "title": "Football Pitch",
+      "type": "Sports",
+      "icon": "ball",
+      "images": [
+        {
+          "src": "/images/activities/football-pitch-1-4k.webp",
+          "alt": "The football pitch at Biggi Junior School"
+        }
+      ]
+    },
+    {
+      "id": "library-corner",
+      "title": "Library Corner",
+      "type": "Facilities",
+      "icon": "book",
+      "images": [
+        {
+          "src": "/images/activities/library-corner-1-4k.webp",
+          "alt": "Pupils reading in the library corner"
+        }
+      ]
+    },
+    {
+      "id": "debate-club",
+      "title": "Debate Club",
+      "type": "Clubs",
+      "icon": "chat",
+      "images": [
+        {
+          "src": "/images/activities/debate-club-1-4k.webp",
+          "alt": "Pupils taking part in a debate club session"
+        },
+        {
+          "src": "/images/activities/debate-club-2-4k.webp",
+          "alt": "A pupil speaking during a debate club meeting"
+        },
+        {
+          "src": "/images/activities/debate-club-3-4k.webp",
+          "alt": "Pupils taking part in a debate club session"
+        },
+        {
+          "src": "/images/activities/debate-club-4-4k.webp",
+          "alt": "A pupil speaking during a debate club meeting"
+        },
+        {
+          "src": "/images/activities/debate-club-5-4k.webp",
+          "alt": "Pupils taking part in a debate club session"
+        },
+        {
+          "src": "/images/activities/debate-club-6-4k.webp",
+          "alt": "A pupil speaking during a debate club meeting"
+        }
+      ]
+    },
+    {
+      "id": "netball-court",
+      "title": "Netball Court",
+      "type": "Sports",
+      "icon": "netball",
+      "images": [
+        {
+          "src": "/images/activities/netball-court-1-4k.webp",
+          "alt": "Pupils playing netball on the court"
+        }
+      ]
+    },
+    {
+      "id": "dining-hall",
+      "title": "Dining Hall",
+      "type": "Facilities",
+      "icon": "dining",
+      "images": [
+        {
+          "src": "/images/activities/dining-hall-1-4k.webp",
+          "alt": "Pupils having a meal in the dining hall"
+        },
+        {
+          "src": "/images/activities/dining-hall-2-4k.webp",
+          "alt": "Pupils having a meal in the dining hall"
+        }
+      ]
+    },
+    {
+      "id": "music-club",
+      "title": "Music Club",
+      "type": "Clubs",
+      "icon": "music",
+      "images": [
+        {
+          "src": "/images/activities/music-club-1-4k.webp",
+          "alt": "Pupils singing together in music club"
+        },
+        {
+          "src": "/images/activities/music-club-2-4k.webp",
+          "alt": "Pupils playing instruments and dancing in music club"
+        },
+        {
+          "src": "/images/activities/music-club-3-4k.webp",
+          "alt": "Pupils playing instruments and dancing in music club"
+        },
+        {
+          "src": "/images/activities/music-club-4-4k.webp",
+          "alt": "Pupils playing instruments and dancing in music club"
+        },
+        {
+          "src": "/images/activities/music-club-5-4k.webp",
+          "alt": "Pupils playing instruments and dancing in music club"
+        }
+      ]
+    },
+    {
+      "id": "athletics",
+      "title": "Athletics",
+      "type": "Sports",
+      "icon": "run",
+      "images": [
+        {
+          "src": "/images/activities/athletics-1-4k.webp",
+          "alt": "Pupils competing in an athletics event"
+        },
+        {
+          "src": "/images/activities/athletics-2-4k.webp",
+          "alt": "Pupils practising athletics on the school field"
+        }
+      ]
+    },
+    {
+      "id": "science-corner",
+      "title": "Science Corner",
+      "type": "Facilities",
+      "icon": "flask",
+      "images": [
+        {
+          "src": "/images/activities/science-corner-2-4k.webp",
+          "alt": "Science materials displayed in the science corner"
+        },
+        {
+          "src": "/images/activities/science-corner-3-4k.webp",
+          "alt": "Pupils exploring the science corner"
+        },
+        {
+          "src": "/images/activities/science-corner-4-4k.webp",
+          "alt": "Pupils exploring the science corner"
+        },
+        {
+          "src": "/images/activities/science-corner-5-4k.webp",
+          "alt": "Pupils exploring the science corner"
+        },
+        {
+          "src": "/images/activities/science-corner-6-4k.webp",
+          "alt": "Pupils exploring the science corner"
+        },
+        {
+          "src": "/images/activities/science-corner-7-4k.webp",
+          "alt": "Pupils exploring the science corner"
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "label": "",
+    "url": "",
+    "newTab": true
+  },
+  "seo": {
+    "title": "Activities & Facilities | Biggi Junior School",
+    "description": "Overview of activities, facilities, and programmes available to pupils at Biggi Junior School.",
+    "image": ""
+  }
+}

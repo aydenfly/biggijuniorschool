@@ -1,0 +1,31 @@
+{
+  "eyebrow": "Get in touch",
+  "heading": "We'd love to hear from you",
+  "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3141.949947154748!2d31.3590051585726!3d2.3580899266762536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMsKwMjEnMjkuNiJOIDMxwrAyMSczOC41IkU!5e1!3m2!1sen!2sug!4v1790765875338!5m2!1sen!2sug",
+  "details": {
+    "title": "Biggi Junior School",
+    "address": "Kabim Village, Marama Parish, Panyimur Sub County,\nJonam County, Pakwach District, Uganda.",
+    "phones": [
+      "+256755293211",
+      "+256703920515"
+    ],
+    "email": "info@biggijuniorschool.com",
+    "youTube": {
+      "label": "@BiggiJuniorSchool",
+      "url": "https://www.youtube.com/channel/UCgpxHtVUFLQQI5LgR_dwZFA"
+    },
+    "facebook": {
+      "label": "@BiggiJuniorSchool",
+      "url": "https://www.facebook.com/BiggiJuniorSchool"
+    },
+    "whatsApp": {
+      "label": "@BiggiJuniorSchool",
+      "url": "https://api.whatsapp.com/send?phone=256755293211"
+    }
+  },
+  "seo": {
+    "title": "Get In Touch | Biggi Junior School",
+    "description": "Contact Biggi Junior School for enquiries about admissions, visits, or donations.",
+    "image": ""
+  }
+}

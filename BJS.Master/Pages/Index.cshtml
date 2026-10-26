@@ -1,629 +1,441 @@
 @page
+@using System.Text.Json
+@using Bjs.Cms.Contracts
+@using BJS.Master.Pages
+@using BJS.Master.Services
+@model BJS.Master.Pages.IndexModel
 @{
     Layout = null;
-}
-@model BJS.Master.Pages.IndexModel
 
+    // Everything below comes from the CMS (Model.C). Editors change it in the dashboard; nothing here is hard-coded content.
+    var c = Model.C;
+    var g = c.General;
+    var cms = Model.CmsBase;
+
+    string M(string? src) => SiteHelpers.Media(src, cms);
+    string Abs(string? src)
+    {
+        var m = M(src);
+        if (string.IsNullOrEmpty(m)) return "";
+        return m.StartsWith("http", StringComparison.OrdinalIgnoreCase) ? m : c.SiteUrl + m;
+    }
+    Dictionary<string, string> Meta(Seo s) => new()
+    {
+        ["title"] = string.IsNullOrWhiteSpace(s.Title) ? g.SiteName : s.Title,
+        ["description"] = string.IsNullOrWhiteSpace(s.Description) ? g.Tagline : s.Description,
+        ["image"] = Abs(string.IsNullOrWhiteSpace(s.Image) ? g.DefaultShareImage : s.Image),
+    };
+
+    // The page's JavaScript swaps the title/description as visitors move between sections.
+    var metaMap = new Dictionary<string, Dictionary<string, string>>
+    {
+        ["hero"] = Meta(c.Hero.Seo),
+        ["about"] = Meta(c.About.Seo),
+        ["profiles"] = Meta(c.Leadership.Seo),
+        ["history"] = Meta(c.History.Seo),
+        ["gallery"] = Meta(c.SocialWall.Seo),
+        ["activities"] = Meta(c.Activities.Seo),
+        ["contact"] = Meta(c.Contact.Seo),
+        ["tuition"] = Meta(c.Tuition.Seo),
+        ["privacy"] = Meta(c.Privacy.Seo),
+    };
+    var home = Meta(c.Hero.Seo);
+    var homeTitle = home["title"];
+    var homeDesc = home["description"];
+    var homeImage = home["image"];
+    var homeUrl = c.SiteUrl + "/";
+
+    // A link in the menu or footer. Links to a section of this page get data-target so the page scrolls instead of reloading.
+    void Anchor(string label, string url, bool newTab, string? number = null)
+    {
+        var target = SiteRoutes.AnchorFor(url);
+        var external = SiteRoutes.IsExternal(url) || newTab;
+        <a href="@url" data-target="@target" target="@(external ? "_blank" : null)" rel="@(external ? "noopener noreferrer" : null)">@if (number != null) {<span>@number</span>}@label</a>
+    }
+
+    var logo = M(g.Logo);
+    var heroIcons = new List<(string Icon, string Href)>();
+    foreach (var platform in new[] { "facebook", "email", "whatsapp", "youtube", "x", "twitter", "tiktok", "linkedin", "instagram" })
+    {
+        if (platform == "email")
+        {
+            if (!string.IsNullOrWhiteSpace(g.PublicEmail)) heroIcons.Add(("email", "mailto:" + g.PublicEmail));
+        }
+        else
+        {
+            var link = g.Social.FirstOrDefault(s => s.Platform == platform);
+            if (link != null) heroIcons.Add((platform, link.Url));
+        }
+    }
+    var cd = c.Contact.Details;
+}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title id="page-title">Home | Biggi Junior School — Pakwach</title>
-    <meta name="description" id="meta-description" content="Biggi Junior School — Education for a brighter future. An ultra-modern junior school in Pakwach, offering Nursery through Primary 7." />
-    <meta property="og:title" id="og-title" content="Home | Biggi Junior School — Pakwach" />
-    <meta property="og:description" id="og-description" content="Biggi Junior School — Education for a brighter future. An ultra-modern junior school in Pakwach, offering Nursery through Primary 7." />
+    <title id="page-title">@homeTitle</title>
+    <meta name="description" id="meta-description" content="@homeDesc" />
+    <meta property="og:title" id="og-title" content="@homeTitle" />
+    <meta property="og:description" id="og-description" content="@homeDesc" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" id="og-url" content="https://www.biggijuniorschool.com/" />
-    <meta property="og:image" id="og-image" content="https://www.biggijuniorschool.com/images/hero/hero-1-4k.webp" />
+    <meta property="og:url" id="og-url" content="@homeUrl" />
+    <meta property="og:image" id="og-image" content="@homeImage" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" id="twitter-title" content="Home | Biggi Junior School — Pakwach" />
-    <meta name="twitter:description" id="twitter-description" content="Biggi Junior School — Education for a brighter future. An ultra-modern junior school in Pakwach, offering Nursery through Primary 7." />
-    <meta name="twitter:image" id="twitter-image" content="https://www.biggijuniorschool.com/images/hero/hero-1-4k.webp" />
+    <meta name="twitter:title" id="twitter-title" content="@homeTitle" />
+    <meta name="twitter:description" id="twitter-description" content="@homeDesc" />
+    <meta name="twitter:image" id="twitter-image" content="@homeImage" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="~/css/site.min.css" />
 
-    <!-- Google Tag Manager -->
-    <script>        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-WHC9QD3G');</script>
+    @if (!string.IsNullOrWhiteSpace(g.GtmId))
+    {
+        <!-- Google Tag Manager -->
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', '@g.GtmId');
+        </script>
         <!-- End Google Tag Manager -->
+    }
 
-        <template id="meta-map">
-            {
-            "hero": {
-            "title": "Home | Biggi Junior School — Pakwach",
-            "description": "Biggi Junior School is an ultra-modern junior school in Pakwach offering Nursery through Primary 7 and a commitment to inclusive education.",
-            "image": "https://www.biggijuniorschool.com/images/hero/hero-1-4k.webp"
-            },
-            "about": {
-            "title": "About Us | Biggi Junior School",
-            "description": "Biggi Junior School is based in Pakwach. Established in 2022, we provide Nursery through Primary 7 in a caring, community-driven environment.",
-            "image": "https://www.biggijuniorschool.com/images/hero/hero-2-4k.webp"
-            },
-            "profiles": {
-            "title": "Leadership | Biggi Junior School",
-            "description": "Meet the leadership team guiding Biggi Junior School and the people shaping learning and care for our pupils.",
-            "image": "https://www.biggijuniorschool.com/images/leadership/lead-1.webp"
-            },
-            "history": {
-            "title": "History | Biggi Junior School",
-            "description": "Learn about the founding and growth of Biggi Junior School since 2022.",
-            "image": "https://www.biggijuniorschool.com/images/history/history-1.webp"
-            },
-            "gallery": {
-            "title": "Gallery & Media | Biggi Junior School",
-            "description": "Browse photos and media that showcase school life, events, and learning at Biggi Junior School.",
-            "image": "https://www.biggijuniorschool.com/images/gallery/gallery-1.webp"
-            },
-            "activities": {
-            "title": "Activities & Facilities | Biggi Junior School",
-            "description": "Overview of activities, facilities, and programmes available to pupils at Biggi Junior School.",
-            "image": "https://www.biggijuniorschool.com/images/activities/act-1.webp"
-            },
-            "contact": {
-            "title": "Get In Touch | Biggi Junior School",
-            "description": "Contact Biggi Junior School for enquiries about admissions, visits, or donations.",
-            "image": "https://www.biggijuniorschool.com/images/contact/contact-1.webp"
-            },
-            "tuition": {
-            "title": "Tuition & Fees | Biggi Junior School",
-            "description": "Information about fees, bursaries, and ways to support a pupil at Biggi Junior School.",
-            "image": "https://www.biggijuniorschool.com/images/tuition/tuition-1.webp"
-            },
-            "privacy": {
-            "title": "Privacy & Cookies | Biggi Junior School",
-            "description": "Our privacy and cookie policy including what information we collect and how we use it.",
-            "image": "https://www.biggijuniorschool.com/images/privacy/privacy-1.webp"
-            }
-            }
-        </template>
-    </head>
-    <body>
-        <!-- Google Tag Manager (noscript) -->
+    <template id="meta-map">@Html.Raw(JsonSerializer.Serialize(metaMap))</template>
+</head>
+<body>
+    @if (!string.IsNullOrWhiteSpace(g.GtmId))
+    {
         <noscript>
-            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHC9QD3G"
-                    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=@g.GtmId" height="0" width="0" style="display:none;visibility:hidden"></iframe>
         </noscript>
-        <!-- End Google Tag Manager (noscript) -->
-        <div class="topbar">
-            <a href="/" class="site-logo">
-                <img src="~/Images/logo_bjs_white.png" />
-            </a>
-            <button id="menu-toggler">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+    }
+    <div class="topbar">
+        <a href="/" class="site-logo">
+            <img src="@logo" alt="@g.SiteName" />
+        </a>
+        <button id="menu-toggler" aria-label="Menu">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+
+    <nav class="navpanel" id="navpanel">
+        @for (var i = 0; i < c.Menu.Items.Count; i++)
+        {
+            var item = c.Menu.Items[i];
+            Anchor(item.Label, item.Url, item.NewTab, (i + 1).ToString("00"));
+        }
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div class="hero-banners" id="bannerBox" data-interval="@(Math.Max(2, c.Hero.AutoplaySeconds) * 1000)">
+            @for (var i = 0; i < c.Hero.Slides.Count; i++)
+            {
+                var slide = c.Hero.Slides[i];
+                var srcset = SiteHelpers.Srcset(slide.Image, new[] { 480, 800 }, 1152, cms);
+                <div class="banner b@((i % 5) + 1)@(i == 0 ? " active" : "")">
+                    <img src="@M(slide.Image)" srcset="@(srcset.Length > 0 ? srcset : null)" sizes="@(srcset.Length > 0 ? "100vw" : null)" alt="@slide.Alt" width="1152" height="864"
+                         fetchpriority="@(i == 0 ? "high" : null)" loading="@(i == 0 ? null : "lazy")" decoding="async" onerror="this.remove()">
+                </div>
+            }
         </div>
 
-        <nav class="navpanel" id="navpanel">
-            <a href="/" data-target="hero"><span>01</span>Home</a>
-            <a href="/about" data-target="about"><span>02</span>About Us</a>
-            <a href="/leadership" data-target="profiles"><span>03</span>Leadership</a>
-            <a href="/history" data-target="history"><span>04</span>History</a>
-            <a href="/gallery" data-target="gallery"><span>05</span>Gallery &amp; Media</a>
-            <a href="/activities" data-target="activities"><span>06</span>Activities &amp; Facilities</a>
-            <a href="/contact" data-target="contact"><span>07</span>Get In Touch</a>
-            <a href="/tuition" data-target="tuition"><span>08</span>Tuition &amp; Fees</a>
-            <a href="/privacy" data-target="privacy"><span>09</span>Privacy &amp; Cookies</a>
-        </nav>
-
-        <!-- HERO -->
-        <section id="hero">
-            <div class="hero-banners" id="bannerBox">
-                <div class="banner b1 active">
-                    <img src="/images/hero/hero-1-4k.webp" srcset="/images/hero/hero-1-480.webp 480w, /images/hero/hero-1-800.webp 800w, /images/hero/hero-1-4k.webp 1152w" sizes="100vw" alt="Pupils of Biggi Junior School gathered together outside a thatched hut" width="1152" height="864" fetchpriority="high" decoding="async" onerror="this.remove()">
-                </div>
-                <div class="banner b2">
-                    <img src="/images/hero/hero-2-4k.webp" srcset="/images/hero/hero-2-480.webp 480w, /images/hero/hero-2-800.webp 800w, /images/hero/hero-2-4k.webp 1152w" sizes="100vw" alt="Pupils in school uniform seated and standing in front of the school building" width="1152" height="864" loading="lazy" decoding="async" onerror="this.remove()">
-                </div>
-                <div class="banner b3">
-                    <img src="/images/hero/hero-3-4k.webp" srcset="/images/hero/hero-3-480.webp 480w, /images/hero/hero-3-800.webp 800w, /images/hero/hero-3-4k.webp 1152w" sizes="100vw" alt="Primary 3 pupils holding up name cards at their desks in class" width="1152" height="864" loading="lazy" decoding="async" onerror="this.remove()">
-                </div>
-                <div class="banner b4">
-                    <img src="/images/hero/hero-4-4k.webp" srcset="/images/hero/hero-4-480.webp 480w, /images/hero/hero-4-800.webp 800w, /images/hero/hero-4-4k.webp 1152w" sizes="100vw" alt="A teacher standing at the blackboard with pupils seated at their desks" width="1152" height="864" loading="lazy" decoding="async" onerror="this.remove()">
-                </div>
-                <div class="banner b5">
-                    <img src="/images/hero/hero-5-4k.webp" srcset="/images/hero/hero-5-480.webp 480w, /images/hero/hero-5-800.webp 800w, /images/hero/hero-5-4k.webp 1152w" sizes="100vw" alt="The entrance gate to the Biggi Junior School compound" width="1152" height="864" loading="lazy" decoding="async" onerror="this.remove()">
-                </div>
-            </div>
-
-            <div class="dots" id="dots"></div>
-            <div class="hero-overlay">
-                <div class="hero-left">
-                    <div class="inner-wrapper">
-                        <div class="site-logo"><img src="~/Images/logo_bjs_white.png" /></div>
-                        <h1>Education for a <span class="highlight">brighter future</span></h1>
-                        <p><em>Biggi Junior School</em> is an ultra-modern junior school in Ndaba Village, Marama Parish, Panyimur Sub-County, Pakwach District — founded in 2022 out of a promise to give every child a chance to learn, regardless of what their family can afford. Today, we have over 200 registered pupils.</p>
+        <div class="dots" id="dots"></div>
+        <div class="hero-overlay">
+            <div class="hero-left">
+                <div class="inner-wrapper">
+                    @if (logo.Length > 0)
+                    {
+                        <div class="site-logo"><img src="@logo" alt="@g.SiteName" /></div>
+                    }
+                    <h1>@c.Hero.HeadingLead <span class="highlight">@c.Hero.HeadingHighlight</span></h1>
+                    @Html.Raw(c.Hero.Text)
+                    @if (c.Hero.ShowSocialIcons && heroIcons.Count > 0)
+                    {
                         <ul id="sm-icons">
-                            <li>
-                                <a href="https://www.facebook.com/BiggiJuniorSchool" target="_blank" rel="noopener noreferrer"><img src="~/Images/facebook.svg" /></a>
-                            </li>
-                            <li>
-                                <a href="mailto:info@biggijuniorschool.com" target="_blank" rel="noopener noreferrer"><img src="~/Images/email.svg" /></a>
-                            </li>
-                            <li>
-                                <a href="https://api.whatsapp.com/send?phone=256755293211" target="_blank" rel="noopener noreferrer"> <img src="~/Images/whatsapp.svg" /></a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/channel/UCgpxHtVUFLQQI5LgR_dwZFA" target="_blank" rel="noopener noreferrer"><img src="~/Images/youtube.svg" /></a>
-                            </li>
+                            @foreach (var icon in heroIcons)
+                            {
+                                <li>
+                                    <a href="@icon.Href" target="_blank" rel="noopener noreferrer" aria-label="@icon.Icon"><img src="/images/@(icon.Icon).svg" alt="" /></a>
+                                </li>
+                            }
                         </ul>
-                    </div>
+                    }
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ABOUT -->
-        <section id="about" class="band-white">
-            <div class="wrap about-grid">
-                <div class="about-img"><img src="/images/emblem.png" srcset="/images/emblem.png 320w, /images/emblem-v2.png 480w, /images/emblem.png 640w" sizes="(max-width:520px) 92vw, (max-width:820px) 46vw, 380px" alt="Emblem of Biggi Junior School" width="480" height="640" loading="lazy" decoding="async" onerror="this.remove()"></div>
-                <div class="about-text">
-                    <div class="eyebrow">About Biggi Junior School</div>
-                    <h2>An ultra-modern school for a brighter future</h2>
-                    <p>Biggi Junior School is based in Pakwach. Established in 2022, we have grown to over 200 registered pupils, offering a full education from Nursery through Primary 7 in an environment built on discipline, care, and community.</p>
-                    <p>Our teachers and leadership work as one team to keep classrooms full of curiosity, and to make sure that a family's circumstances never decide whether a child gets to learn. Through fundraising and bursary support, we continue extending that promise to more children each year.</p>
+    <!-- ABOUT -->
+    <section id="about" class="band-white">
+        <div class="wrap about-grid">
+            @{
+                var card = c.About.ImageCard;
+                var hasImage = !string.IsNullOrWhiteSpace(card.Image);
+            }
+            <div class="about-img@(hasImage ? " has-image" : "")" data-caption="@card.Caption">
+                @if (hasImage)
+                {
+                    <img src="@M(card.Image)" alt="@card.Alt" loading="lazy" decoding="async" />
+                }
+            </div>
+            <div class="about-text">
+                <div class="eyebrow">@c.About.Eyebrow</div>
+                <h2>@c.About.Heading</h2>
+                @Html.Raw(c.About.Text)
+                @if (c.About.Stats.Count > 0)
+                {
                     <div class="stat-row">
-                        <div><strong>2022</strong><span>Year established</span></div>
-                        <div><strong>200+</strong><span>Registered pupils</span></div>
-                        <div><strong>N–P7</strong><span>Nursery to Primary 7</span></div>
-                        <div><strong>Pakwach</strong><span>Location</span></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROFILES / LEADERSHIP -->
-        <section id="profiles" class="band-sage">
-            <div class="wrap">
-                <div class="sect-head">
-                    <div class="eyebrow">Leadership</div>
-                    <h2>The people guiding Biggi Junior School</h2>
-                </div>
-                <div class="profile-grid">
-                    <button class="p-card" data-bio-id="hellen-nyilak"><div class="fill"><img src="/images/profiles/hellen-nyilak-4k.webp" srcset="/images/profiles/hellen-nyilak-320.webp 320w, /images/profiles/hellen-nyilak-480.webp 480w, /images/profiles/hellen-nyilak-640.webp 640w" sizes="(max-width:520px) 92vw, (max-width:820px) 46vw, 380px" alt="Hellen Nyilak, Founder and Director of Biggi Junior School" width="480" height="640" loading="lazy" decoding="async" onerror="this.remove()"></div><div class="p-strip"><b>Hellen Nyilak</b><span>Founder &amp; Director</span></div></button>
-                    <button class="p-card" data-bio-id="wanadi-melki"><div class="fill"><img src="/images/profiles/wanadi-melki-4k.webp" srcset="/images/profiles/wanadi-melki-320.webp 320w, /images/profiles/wanadi-melki-480.webp 480w, /images/profiles/wanadi-melki-640.webp 640w" sizes="(max-width:520px) 92vw, (max-width:820px) 46vw, 380px" alt="Wanadi Melki, Head Teacher of Biggi Junior School" width="480" height="640" loading="lazy" decoding="async" onerror="this.remove()"></div><div class="p-strip"><b>Wanadi Melki</b><span>Head Teacher</span></div></button>
-                    <button class="p-card" data-bio-id="ocakwun-fred"><div class="fill"><img src="/images/profiles/ocakwun-fred-4k.webp" srcset="/images/profiles/ocakwun-fred-320.webp 320w, /images/profiles/ocakwun-fred-480.webp 480w, /images/profiles/ocakwun-fred-640.webp 640w" sizes="(max-width:520px) 92vw, (max-width:820px) 46vw, 380px" alt="Fred Ocakwun, Dean of Studies of Biggi Junior School" width="480" height="640" loading="lazy" decoding="async" onerror="this.remove()"></div><div class="p-strip"><b>Ocakwun Fred</b><span>Dean of Studies</span></div></button>
-                    <button class="p-card" data-bio-id="pikisa-kenneth"><div class="fill"><img src="/images/profiles/pikisa-kenneth-4k.webp" srcset="/images/profiles/pikisa-kenneth-320.webp 320w, /images/profiles/pikisa-kenneth-480.webp 480w, /images/profiles/pikisa-kenneth-640.webp 640w" sizes="(max-width:520px) 92vw, (max-width:820px) 46vw, 380px" alt="Pikisa Kenneth, Head Prefect of Biggi Junior School" width="480" height="640" loading="lazy" decoding="async" onerror="this.remove()"></div><div class="p-strip"><b>Pikisa Kenneth</b><span>Head Prefect</span></div></button>
-                    <button class="p-card" data-bio-id="yikparwoth-fortunate"><div class="fill"><img src="/images/profiles/yikparwoth-fortunate-4k.webp" srcset="/images/profiles/yikparwoth-fortunate-320.webp 320w, /images/profiles/yikparwoth-fortunate-480.webp 480w, /images/profiles/yikparwoth-fortunate-640.webp 640w" sizes="(max-width:520px) 92vw, (max-width:820px) 46vw, 380px" alt="Yikparwoth Fortunate, Head Girl of Biggi Junior School" width="480" height="640" loading="lazy" decoding="async" onerror="this.remove()"></div><div class="p-strip"><b>Yikparwoth Fortunate</b><span>Head Girl</span></div></button>
-                    <button class="p-card" data-bio-id="mungudit-elvis"><div class="fill"><img src="/images/profiles/mungudit-elvis-4k.webp" srcset="/images/profiles/mungudit-elvis-320.webp 320w, /images/profiles/mungudit-elvis-480.webp 480w, /images/profiles/mungudit-elvis-640.webp 640w" sizes="(max-width:520px) 92vw, (max-width:820px) 46vw, 380px" alt="Mungudit Elvis, Head Boy of Biggi Junior School" width="480" height="640" loading="lazy" decoding="async" onerror="this.remove()"></div><div class="p-strip"><b>Mungudit Elvis</b><span>Head Boy</span></div></button>
-                </div>
-            </div>
-        </section>
-
-        <!-- HISTORY -->
-        <section id="history" class="band-white">
-            <div class="wrap history">
-                <div class="sect-head">
-                    <div class="eyebrow">A bit of the History</div>
-                    <h2>As told by the Founder</h2>
-                </div>
-                <p>I, <strong>Hellen Nyilak</strong>, was born and raised deep in the village, where life was hard enough that we sometimes had nothing to eat. The nearest school was at least five miles away, and with no means of transport, we walked there on foot — often missing class altogether when the rains made the roads impassable.</p>
-                <p>My parents could not afford my school fees, so they paid in cassava and maize instead. I sold mangoes and firewood, and worked in other people's gardens, just to raise enough money for my own school fees and help support my siblings.</p>
-                <p>I grew up hearing the elders say "somu ber" — education is good — and I made myself a promise: when I grew up, I would open a school for every child whose family could not afford to pay fees.</p>
-                <p>In 2022, I kept that promise. Biggi Junior School opened its doors in Marama Lower (now Ndaba Village), Marama Parish, Panyimur Sub-County, Jonam County, Pakwach District. Guided by our motto, "Education for a Brighter Future," we set out to make sure every family in this community could send their children to school — believing that education today means a better future for everyone, here and beyond.</p>
-                <p>Most families in this area once depended on fishing on Lake Albert. Since the government's fishing ban on this part of the lake, combined with the region's hot, dry climate, many have been left with almost no way to earn a living.</p>
-                <p>Alongside our academic curriculum, we equip our pupils with practical skills — including book-making, cookery, and soap-making — to give them tools for the future, whatever path they choose.</p>
-                <p>I invite you to join us. Lend a hand, support a child, and help build a brighter future for this community.</p>
-            </div>
-        </section>
-
-        <!-- GALLERY -->
-        <section id="gallery" class="band-gold" data-title="Gallery &amp; Media" data-desc="Photos and videos of everyday life at Biggi Junior School.">
-            <div class="wrap">
-                <div class="sect-head">
-                    <div class="eyebrow">Social Wall</div>
-                    <h2>Life at Biggi, in pictures</h2>
-                </div>
-                <div class="filters" id="galFilters">
-                    <button class="active" data-f="*">All</button>
-                    <button data-f=".school">School</button>
-                    <button data-f=".students">Students</button>
-                    <button data-f=".events">Events</button>
-                </div>
-                <div class="iso-grid" id="galGrid">
-                    <div class="iso-item" data-cat="school">
-                        <div class="box b1" data-label="Morning Assembly">
-                            <svg class="iso-icon" viewBox="0 0 24 24"><path d="M12 3 2 11h3v9h5v-6h4v6h5v-9h3L12 3Z" /></svg>
-                            <span>Morning Assembly</span>
-                        </div>
-                        <div class="iso-images" hidden>
-                            <img src="/images/social-wall/assembly-1-4k.webp" alt="Pupils gathered together outside before class">
-                        </div>
-                    </div>
-                    <div class="iso-item" data-cat="students">
-                        <div class="box b2" data-label="Baby Class">
-                            <svg class="iso-icon" viewBox="0 0 24 24"><path d="M12 3 1 8l11 5 9-4.1V16h2V8L12 3Zm-7 9.5V16c0 2 3.1 4 7 4s7-2 7-4v-3.5l-7 3.2-7-3.2Z" /></svg>
-                            <span>Baby Class</span>
-                        </div>
-                        <div class="iso-images" hidden>
-                            <img src="/images/social-wall/baby-class-1-4k.webp" alt="Baby class pupils seated together in their classroom">
-                            <img src="/images/social-wall/baby-class-2-4k.webp" alt="A baby class pupil writing at their desk">
-                            <img src="/images/social-wall/baby-class-3-4k.webp" alt="A baby class pupil writing at their desk">
-                        </div>
-                    </div>
-                    <div class="iso-item" data-cat="events">
-                        <div class="box b3" data-label="Prize Giving Day">
-                            <svg class="iso-icon" viewBox="0 0 24 24"><path d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2Zm13 8H4v10h16V10ZM4 7v1h16V7H4Z" /></svg>
-                            <span>Prize Giving Day</span>
-                        </div>
-                        <div class="iso-images" hidden>
-                            <img src="/images/social-wall/prize-giving-1-4k.webp" alt="Pupils receiving prizes on Prize Giving Day">
-                        </div>
-                    </div>
-                    <div class="iso-item" data-cat="school">
-                        <div class="box b4" data-label="Classroom Block">
-                            <svg class="iso-icon" viewBox="0 0 24 24"><path d="M12 3 2 11h3v9h5v-6h4v6h5v-9h3L12 3Z" /></svg>
-                            <span>Classroom Block</span>
-                        </div>
-                        <div class="iso-images" hidden>
-                            <img src="/images/social-wall/classroom-block-1-4k.webp" alt="The classroom block at Biggi Junior School">
-                            <img src="/images/social-wall/classroom-block-2-4k.webp" alt="The classroom block at Biggi Junior School">
-                            <img src="/images/social-wall/classroom-block-3-4k.webp" alt="The classroom block at Biggi Junior School">
-                            <img src="/images/social-wall/classroom-block-4-4k.webp" alt="The classroom block at Biggi Junior School">
-                            <img src="/images/social-wall/classroom-block-5-4k.webp" alt="The classroom block at Biggi Junior School">
-                        </div>
-                    </div>
-                    <div class="iso-item" data-cat="students">
-                        <div class="box b5" data-label="Reading Time">
-                            <svg class="iso-icon" viewBox="0 0 24 24"><path d="M12 3 1 8l11 5 9-4.1V16h2V8L12 3Zm-7 9.5V16c0 2 3.1 4 7 4s7-2 7-4v-3.5l-7 3.2-7-3.2Z" /></svg>
-                            <span>Reading Time</span>
-                        </div>
-                        <div class="iso-images" hidden>
-                            <img src="/images/social-wall/reading-time-1-4k.webp" alt="Pupils reading together during reading time">
-                        </div>
-                    </div>
-                    <div class="iso-item" data-cat="events">
-                        <div class="box b1" data-label="Sports Day">
-                            <svg class="iso-icon" viewBox="0 0 24 24"><path d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2Zm13 8H4v10h16V10ZM4 7v1h16V7H4Z" /></svg>
-                            <span>Sports Day</span>
-                        </div>
-                        <div class="iso-images" hidden>
-                            <img src="/images/social-wall/sports-day-1-4k.webp" alt="Pupils competing on Sports Day">
-                            <img src="/images/social-wall/sports-day-2-4k.webp" alt="Pupils competing on Sports Day">
-                            <img src="/images/social-wall/sports-day-3-4k.webp" alt="Pupils competing on Sports Day">
-                        </div>
-                    </div>
-                    <div class="iso-item" data-cat="students">
-                        <div class="box b2" data-label="Primary Seven">
-                            <svg class="iso-icon" viewBox="0 0 24 24"><path d="M12 3 1 8l11 5 9-4.1V16h2V8L12 3Zm-7 9.5V16c0 2 3.1 4 7 4s7-2 7-4v-3.5l-7 3.2-7-3.2Z" /></svg>
-                            <span>Primary Seven</span>
-                        </div>
-                        <div class="iso-images" hidden>
-                            <img src="/images/social-wall/primary-seven-1-4k.webp" alt="Primary Seven pupils in class">
-                        </div>
-                    </div>
-                    <div class="iso-item" data-cat="school">
-                        <div class="box b3" data-label="School Compound">
-                            <svg class="iso-icon" viewBox="0 0 24 24"><path d="M12 3 2 11h3v9h5v-6h4v6h5v-9h3L12 3Z" /></svg>
-                            <span>School Compound</span>
-                        </div>
-                        <div class="iso-images" hidden>
-                            <img src="/images/social-wall/compound-1-4k.webp" alt="A view of the Biggi Junior School compound">
-                            <img src="/images/social-wall/compound-2-4k.webp" alt="A view of the Biggi Junior School compound">
-                            <img src="/images/social-wall/compound-3-4k.webp" alt="A view of the Biggi Junior School compound">
-                            <img src="/images/social-wall/compound-5-4k.webp" alt="A view of the Biggi Junior School compound">
-                            <img src="/images/social-wall/compound-6-4k.webp" alt="A view of the Biggi Junior School compound">
-                            <img src="/images/social-wall/compound-7-4k.webp" alt="A view of the Biggi Junior School compound">
-                            <img src="/images/social-wall/compound-8-4k.webp" alt="A view of the Biggi Junior School compound">
-                            <img src="/images/social-wall/compound-9-4k.webp" alt="A view of the Biggi Junior School compound">
-                            <img src="/images/social-wall/compound-10-4k.webp" alt="A view of the Biggi Junior School compound">
-                        </div>
-                    </div>
-                </div>
-                <div class="cta-row"><a class="btn" href="https://www.youtube.com/channel/UCzIXxvUv0q4pDYLgv3P1eeg" target="_blank" rel="nofollow noopener">Watch more on our YouTube channel</a></div>
-            </div>
-        </section>
-
-        <!-- ACTIVITIES & FACILITIES -->
-        <section id="activities" class="band-slate" data-title="Activities &amp; Facilities" data-desc="Explore the sports, clubs, and facilities that make up school life beyond the classroom.">
-            <div class="wrap">
-                <div class="sect-head">
-                    <div class="eyebrow">Activities &amp; Facilities</div>
-                    <h2>Learning that goes beyond the classroom</h2>
-                    <p>From sports pitches to reading corners, Biggi Junior School gives pupils space to grow physically, socially, and creatively. Explore some of the facilities and activities that make up everyday life here.</p>
-                </div>
-                <div class="filters" id="actFilters">
-                    <button class="active" data-f="*">All</button>
-                    <button data-f=".sports">Sports</button>
-                    <button data-f=".facility">Facilities</button>
-                    <button data-f=".clubs">Clubs</button>
-                </div>
-                <div class="iso-grid" id="actGrid">
-                    <div class="iso-item" data-cat="sports">
-                        <div class="box b1" data-label="Football Pitch">
-                            <svg class="iso-icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2Zm0 2.6 2.6 1.9-1 3.1h-3.2l-1-3.1L12 4.6ZM5.3 8.9l2.7-.2.9 2.9-2.2 2-2.5-1.2-.4-2.8 1.5-.7Zm13.4 0 1.5.7-.4 2.8-2.5 1.2-2.2-2 .9-2.9 2.7.2ZM9.4 13.6h5.2l1.3 3-2.9 2.6h-2l-2.9-2.6 1.3-3Z" /></svg>
-                            <span>Football Pitch</span>
-                        </div>
-                        <div class="iso-images" hidden>
-                            <img src="/images/activities/football-pitch-1-4k.webp" alt="The football pitch at Biggi Junior School">
-                        </div>
-                    </div>
-                    <div class="iso-item" data-cat="facility">
-                        <div class="box b2" data-label="Library Corner">
-                            <svg class="iso-icon" viewBox="0 0 24 24"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H11v18H5.5A1.5 1.5 0 0 1 4 19.5v-15ZM13 3h5.5A1.5 1.5 0 0 1 20 4.5v15a1.5 1.5 0 0 1-1.5 1.5H13V3Z" /></svg>
-                            <span>Library Corner</span>
-                        </div>
-                        <div class="iso-images" hidden>
-                            <img src="/images/activities/library-corner-1-4k.webp" alt="Pupils reading in the library corner">
-                        </div>
-                    </div>
-                    <div class="iso-item" data-cat="clubs">
-                        <div class="box b3" data-label="Debate Club">
-                            <svg class="iso-icon" viewBox="0 0 24 24"><path d="M4 4h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H9l-4.5 4V16H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z" /></svg>
-                            <span>Debate Club</span>
-                        </div>
-                        <div class="iso-images" hidden>
-                            <img src="/images/activities/debate-club-1-4k.webp" alt="Pupils taking part in a debate club session">
-                            <img src="/images/activities/debate-club-2-4k.webp" alt="A pupil speaking during a debate club meeting">
-                            <img src="/images/activities/debate-club-3-4k.webp" alt="Pupils taking part in a debate club session">
-                            <img src="/images/activities/debate-club-4-4k.webp" alt="A pupil speaking during a debate club meeting">
-                            <img src="/images/activities/debate-club-5-4k.webp" alt="Pupils taking part in a debate club session">
-                            <img src="/images/activities/debate-club-6-4k.webp" alt="A pupil speaking during a debate club meeting">
-                        </div>
-                    </div>
-                    <div class="iso-item" data-cat="sports">
-                        <div class="box b4" data-label="Netball Court">
-                            <svg class="iso-icon" viewBox="0 0 24 24"><path d="M12 2a7 7 0 1 0 .001 14.001A7 7 0 0 0 12 2Zm0 2.4A4.6 4.6 0 1 1 7.4 9 4.6 4.6 0 0 1 12 4.4ZM11 16v6h2v-6h-2Zm-4 6 1.6-4h2.1l-1.9 4H7Zm7.7 0-1.9-4h2.1l1.6 4h-1.8Z" /></svg>
-                            <span>Netball Court</span>
-                        </div>
-                        <div class="iso-images" hidden>
-                            <img src="/images/activities/netball-court-1-4k.webp" alt="Pupils playing netball on the court">
-                        </div>
-                    </div>
-                    <div class="iso-item" data-cat="facility">
-                        <div class="box b5" data-label="Dining Hall">
-                            <svg class="iso-icon" viewBox="0 0 24 24"><path d="M6 2v8.5a2.5 2.5 0 0 0 2 2.45V22h2v-9.05A2.5 2.5 0 0 0 12 10.5V2h-1.5v6H9.8V2H8.3v6H7V2H6Zm11 0c-2 0-3.5 2.2-3.5 6s1.2 5.6 2.5 6V22h2V4c0-1.1-.4-2-1-2Z" /></svg>
-                            <span>Dining Hall</span>
-                        </div>
-                        <div class="iso-images" hidden>
-                            <img src="/images/activities/dining-hall-1-4k.webp" alt="Pupils having a meal in the dining hall">
-                            <img src="/images/activities/dining-hall-2-4k.webp" alt="Pupils having a meal in the dining hall">
-                        </div>
-                    </div>
-                    <div class="iso-item" data-cat="clubs">
-                        <div class="box b1" data-label="Music Club">
-                            <svg class="iso-icon" viewBox="0 0 24 24"><path d="M9 17a3 3 0 1 1-2-2.83V4.5a.5.5 0 0 1 .62-.49l9 2.25a.5.5 0 0 1 .38.49V15a3 3 0 1 1-2-2.83V7.14L9 5.4v8.77c.32.22.6.5.82.83H9Z" /></svg>
-                            <span>Music Club</span>
-                        </div>
-                        <div class="iso-images" hidden>
-                            <img src="/images/activities/music-club-1-4k.webp" alt="Pupils singing together in music club">
-                            <img src="/images/activities/music-club-2-4k.webp" alt="Pupils playing instruments and dancing in music club">
-                            <img src="/images/activities/music-club-3-4k.webp" alt="Pupils playing instruments and dancing in music club">
-                            <img src="/images/activities/music-club-4-4k.webp" alt="Pupils playing instruments and dancing in music club">
-                            <img src="/images/activities/music-club-5-4k.webp" alt="Pupils playing instruments and dancing in music club">
-                        </div>
-                    </div>
-                    <div class="iso-item" data-cat="sports">
-                        <div class="box b2" data-label="Athletics">
-                            <svg class="iso-icon" viewBox="0 0 24 24"><path d="M14.1 3a1.7 1.7 0 1 1 0 3.4 1.7 1.7 0 0 1 0-3.4Zm-2.5 5 3 1.4 2 3.6-1.5.9-1.6-2.9-1.3-.6-.9 3.3 2.8 2.6-.5 4.7-1.6-.1.4-3.7-2.8-2.6.3-4.6-2.9 1.3-.8 2.8-1.5-.5 1.1-3.7L11 8l.6.1Z" /></svg>
-                            <span>Athletics</span>
-                        </div>
-                        <div class="iso-images" hidden>
-                            <img src="/images/activities/athletics-1-4k.webp" alt="Pupils competing in an athletics event">
-                            <img src="/images/activities/athletics-2-4k.webp" alt="Pupils practising athletics on the school field">
-                        </div>
-                    </div>
-                    <div class="iso-item" data-cat="facility">
-                        <div class="box b3" data-label="Science Corner">
-                            <svg class="iso-icon" viewBox="0 0 24 24"><path d="M9 2h6v2h-1v5.3l4.4 7.6a2 2 0 0 1-1.7 3H7.3a2 2 0 0 1-1.7-3L10 9.3V4H9V2Zm2 2v5.7l-1 1.8h4l-1-1.8V4h-2Z" /></svg>
-                            <span>Science Corner</span>
-                        </div>
-                        <div class="iso-images" hidden>
-                            <img src="/images/activities/science-corner-2-4k.webp" alt="Science materials displayed in the science corner">
-                            <img src="/images/activities/science-corner-3-4k.webp" alt="Pupils exploring the science corner">
-                            <img src="/images/activities/science-corner-4-4k.webp" alt="Pupils exploring the science corner">
-                            <img src="/images/activities/science-corner-5-4k.webp" alt="Pupils exploring the science corner">
-                            <img src="/images/activities/science-corner-6-4k.webp" alt="Pupils exploring the science corner">
-                            <img src="/images/activities/science-corner-7-4k.webp" alt="Pupils exploring the science corner">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact">
-            <div class="map-embed-full">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3141.949947154748!2d31.3590051585726!3d2.3580899266762536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMsKwMjEnMjkuNiJOIDMxwrAyMSczOC41IkU!5e1!3m2!1sen!2sug!4v1790765875338!5m2!1sen!2sug" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <div class="wrap">
-                <div class="sect-head"><div class="eyebrow">Get in touch</div><h2>We'd love to hear from you</h2></div>
-                <div class="contact-grid">
-                    <div>
-                        @if (!Model.SubmissionSuccessful)
+                        @foreach (var stat in c.About.Stats)
                         {
-                            <form method="post" id="contact-form">
-
-                                <div class="field">
-                                    <label asp-for="contact.fullname">Full name</label>
-                                    <input asp-for="contact.fullname"
-                                           autocomplete="name"
-                                           required />
-                                    <span asp-validation-for="contact.fullname" class="validation-message"></span>
-                                </div>
-
-                                <div class="field">
-                                    <label asp-for="contact.email">Email address</label>
-                                    <input asp-for="contact.email"
-                                           type="email"
-                                           autocomplete="email"
-                                           required />
-                                    <span asp-validation-for="contact.email" class="validation-message"></span>
-                                </div>
-
-                                <div class="field">
-                                    <label asp-for="contact.message">Message</label>
-                                    <textarea asp-for="contact.message"
-                                              rows="6"
-                                              required></textarea>
-                                    <span asp-validation-for="contact.message" class="validation-message"></span>
-                                </div>
-
-                                <button class="btn" type="submit">Send enquiry</button>
-                                <input type="hidden" asp-for="contact.hpToken" aria-label="hp" />
-                                <div asp-validation-summary="All"></div>
-                            </form>
+                            <div><strong>@stat.Value</strong><span>@stat.Label</span></div>
                         }
-                        <div id="contact-result" class="hidden"></div>
                     </div>
-                    <div class="contact-details">
-                        <h3>Biggi Junior School</h3>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFILES / LEADERSHIP -->
+    <section id="profiles" class="band-sage">
+        <div class="wrap">
+            <div class="sect-head">
+                <div class="eyebrow">@c.Leadership.Eyebrow</div>
+                <h2>@c.Leadership.Heading</h2>
+            </div>
+            <div class="profile-grid">
+                @foreach (var person in c.Leadership.People)
+                {
+                    var srcset = SiteHelpers.Srcset(person.Image, new[] { 320, 480 }, 640, cms);
+                    var alt = string.IsNullOrWhiteSpace(person.Designation) ? person.Name : $"{person.Name}, {person.Designation}";
+                    <button class="p-card" data-bio-id="@person.Id"><div class="fill">
+                        @if (!string.IsNullOrWhiteSpace(person.Image))
+                        {
+                            <img src="@M(person.Image)" srcset="@(srcset.Length > 0 ? srcset : null)" sizes="(max-width:520px) 92vw, (max-width:820px) 46vw, 380px" alt="@alt" width="480" height="640" loading="lazy" decoding="async" onerror="this.remove()">
+                        }
+                    </div><div class="p-strip"><b>@person.Name</b><span>@person.Designation</span></div></button>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- HISTORY -->
+    <section id="history" class="band-white">
+        <div class="wrap history">
+            <div class="sect-head">
+                <div class="eyebrow">@c.History.Eyebrow</div>
+                <h2>@c.History.Heading</h2>
+            </div>
+            @Html.Raw(c.History.Text)
+        </div>
+    </section>
+
+    <!-- SOCIAL WALL -->
+    <partial name="_Gallery" model='new GalleryView(c.SocialWall, "gallery", "band-gold", "galFilters", "galGrid", cms)' />
+
+    <!-- ACTIVITIES & FACILITIES -->
+    <partial name="_Gallery" model='new GalleryView(c.Activities, "activities", "band-slate", "actFilters", "actGrid", cms)' />
+
+    <!-- CONTACT -->
+    <section id="contact">
+        @if (!string.IsNullOrWhiteSpace(c.Contact.MapEmbedUrl))
+        {
+            <div class="map-embed-full">
+                <iframe src="@c.Contact.MapEmbedUrl" title="Map showing the school's location" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        }
+        <div class="wrap">
+            <div class="sect-head"><div class="eyebrow">@c.Contact.Eyebrow</div><h2>@c.Contact.Heading</h2></div>
+            <div class="contact-grid">
+                <div>
+                    @if (!Model.SubmissionSuccessful)
+                    {
+                        <form method="post" id="contact-form">
+                            <div class="field">
+                                <label asp-for="contact.fullname">Full name</label>
+                                <input asp-for="contact.fullname"
+                                       autocomplete="name"
+                                       required />
+                                <span asp-validation-for="contact.fullname" class="validation-message"></span>
+                            </div>
+                            <div class="field">
+                                <label asp-for="contact.email">Email address</label>
+                                <input asp-for="contact.email"
+                                       type="email"
+                                       autocomplete="email"
+                                       required />
+                                <span asp-validation-for="contact.email" class="validation-message"></span>
+                            </div>
+                            <div class="field">
+                                <label asp-for="contact.message">Message</label>
+                                <textarea asp-for="contact.message"
+                                          rows="6"
+                                          required></textarea>
+                                <span asp-validation-for="contact.message" class="validation-message"></span>
+                            </div>
+                            <button class="btn" type="submit">Send enquiry</button>
+                            <input type="hidden" asp-for="contact.hpToken" aria-label="hp" />
+                            <div asp-validation-summary="All"></div>
+                        </form>
+                    }
+                    <div id="contact-result" class="hidden"></div>
+                </div>
+                <div class="contact-details">
+                    @if (!string.IsNullOrWhiteSpace(cd.Title)) { <h3>@cd.Title</h3> }
+                    @if (!string.IsNullOrWhiteSpace(cd.Address))
+                    {
                         <p>
-                            Kabim Village, Marama Parish, Panyimur Sub County,<br>
-                            Jonam County, Pakwach District, Uganda.
+                            @{ var lines = cd.Address.Split('\n'); }
+                            @for (var i = 0; i < lines.Length; i++)
+                            {
+                                <text>@lines[i]</text>
+                                if (i < lines.Length - 1) { <br> }
+                            }
                         </p>
-                        <div class="contact-socials">
-                            <p><img src="/Images/whatsapp.svg"> Tel: <a href="tel:+256755293211">+256755293211</a> | <a href="tel:+256703920515">+256703920515</a></p>
-                            <p><img src="/Images/email.svg"> Email: <a href="mailto:info@biggijuniorschool.com">info@biggijuniorschool.com</a></p>
-                            <p><img src="/Images/youtube.svg"> YouTube: <a href="https://www.youtube.com/channel/UCgpxHtVUFLQQI5LgR_dwZFA" target="_blank" rel="noopener noreferrer">@@BiggiJuniorSchool</a></p>
-                            <p><img src="/Images/facebook.svg"> Facebook: <a href="https://www.facebook.com/BiggiJuniorSchool" target="_blank" rel="noopener noreferrer">@@BiggiJuniorSchool</a></p>
-                            <p><img src="/Images/whatsapp.svg"> WhatsApp: <a href="https://api.whatsapp.com/send?phone=256755293211" target="_blank" rel="noopener noreferrer">@@BiggiJuniorSchool</a></p>
-                        </div>
+                    }
+                    <div class="contact-socials">
+                        @if (cd.Phones.Count > 0)
+                        {
+                            <p>
+                                <img src="/images/whatsapp.svg" alt=""> Tel:
+                                @for (var i = 0; i < cd.Phones.Count; i++)
+                                {
+                                    if (i > 0) { <text> | </text> }
+                                    <a href="@SiteHelpers.PhoneHref(cd.Phones[i])">@cd.Phones[i]</a>
+                                }
+                            </p>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(cd.Email))
+                        {
+                            <p><img src="/images/email.svg" alt=""> Email: <a href="mailto:@cd.Email">@cd.Email</a></p>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(cd.YouTube.Url))
+                        {
+                            <p><img src="/images/youtube.svg" alt=""> YouTube: <a href="@cd.YouTube.Url" target="_blank" rel="noopener noreferrer">@(string.IsNullOrWhiteSpace(cd.YouTube.Label) ? cd.YouTube.Url : cd.YouTube.Label)</a></p>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(cd.Facebook.Url))
+                        {
+                            <p><img src="/images/facebook.svg" alt=""> Facebook: <a href="@cd.Facebook.Url" target="_blank" rel="noopener noreferrer">@(string.IsNullOrWhiteSpace(cd.Facebook.Label) ? cd.Facebook.Url : cd.Facebook.Label)</a></p>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(cd.WhatsApp.Url))
+                        {
+                            <p><img src="/images/whatsapp.svg" alt=""> WhatsApp: <a href="@cd.WhatsApp.Url" target="_blank" rel="noopener noreferrer">@(string.IsNullOrWhiteSpace(cd.WhatsApp.Label) ? cd.WhatsApp.Url : cd.WhatsApp.Label)</a></p>
+                        }
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- TUITION / FEES -->
-        <section id="tuition" class="band-sand">
-            <div class="wrap donate-box">
-                <div class="eyebrow">Tuition &amp; Fees</div>
-                <h2>Fees, bursaries, and how to give</h2>
-                <p>School fees cover tuition, meals, and learning materials for each term. Detailed termly fee structures by class are shared directly with parents at enrolment and can be requested through the Contacts section below.</p>
-                <p>Every term, some of our brightest pupils risk missing class simply because their families cannot afford tuition or scholastic materials. That's why we run a bursary programme, supported by donors and well-wishers, so that no child's circumstances decide whether they get to learn.</p>
-                <ul class="donate-list">
-                    <li>Fund tuition for a pupil in need</li>
-                    <li>Provide scholastic materials — books, pens, uniforms</li>
-                    <li>Sponsor a full bursary for a term or a year</li>
-                    <li>Support general school running costs</li>
-                </ul>
-                <button class="btn gold" id="bank-btn" type="button">Support a bursary</button>
-            </div>
-        </section>
-
-        <!-- PRIVACY -->
-        <section id="privacy" class="band-white">
-            <div class="wrap legal">
-                <div class="eyebrow">Legal</div>
-                <h2>Privacy &amp; Cookies</h2>
-                <p>Biggi Junior School respects the privacy of everyone who visits this website, including parents, pupils, donors, and partners.</p>
-                <h4>Information we collect</h4>
-                <p>We only collect information you choose to share with us, such as your name, email, and message when you use our enquiry form.</p>
-                <h4>How we use it</h4>
-                <p>Information submitted through this site is used solely to respond to your enquiry or process your support for the school, and is never sold to third parties.</p>
-                <h4>Cookies</h4>
-                <p>This site may use minimal cookies to remember basic preferences during your visit. No tracking or advertising cookies are used.</p>
-                <h4>Contact us</h4>
-                <p>If you have questions about this policy, please reach out via the enquiry form in our contact section.</p>
-            </div>
-        </section>
-
-        <!-- FOOTER -->
-        <footer>
-            <div class="wrap">
-                <div class="foot-grid">
-                    <div class="foot-brand">
-                        <div>
-                            <a href="/" class="site-logo">
-                                <img src="~/Images/logo_bjs_white.png" />
-                            </a>
-                        </div>
-                        <p>An ultra-modern junior school in Pakwach, teaching Nursery through Primary 7.</p>
-                    </div>
-                    <div>
-                        <h5>Explore</h5>
-                        <a href="/about" data-target="about">About Us</a><a href="/leadership" data-target="profiles">Leadership</a><a href="/gallery" data-target="gallery">Gallery &amp; Media</a><a href="/activities" data-target="activities">Activities &amp; Facilities</a>
-                    </div>
-                    <div>
-                        <h5>Connect</h5>
-                        <a href="/contact" data-target="contact">Get In Touch</a><a href="/tuition" data-target="tuition">Tuition &amp; Fees</a><a href="/privacy" data-target="privacy">Privacy &amp; Cookies</a>
-                        <a href="https://www.youtube.com/channel/UCzIXxvUv0q4pDYLgv3P1eeg" target="_blank" rel="nofollow noopener">YouTube Channel</a>
-                    </div>
-                </div>
-                <div class="foot-bottom">
-                    <span>© 2026 Biggi Junior School — Pakwach.</span>
-                    <span>Built with care for our learners.</span>
-                </div>
-            </div>
-        </footer>
-
-        <div class="scrim" id="scrim"></div>
-        <div class="slidein" id="slidein">
-            <button class="close-x" id="slideClose">✕</button>
-            <div id="slideBody"></div>
         </div>
+    </section>
 
-        <div class="lb" id="lightbox">
-            <button class="close-x" id="lbClose">✕</button>
-            <button class="lb-nav prev" id="lbPrev" aria-label="Previous image">‹</button>
-            <div class="lb-slides" id="lbSlides"></div>
-            <button class="lb-nav next" id="lbNext" aria-label="Next image">›</button>
-            <div class="lb-dots" id="lbDots"></div>
-            <div class="lb-counter" id="lbCounter"></div>
+    <!-- TUITION / FEES -->
+    @{
+        var btn = c.Tuition.Button;
+        var panelBtn = btn.Action == "panel";
+    }
+    <section id="tuition" class="band-sand">
+        <div class="wrap donate-box">
+            <div class="eyebrow">@c.Tuition.Eyebrow</div>
+            <h2>@c.Tuition.Heading</h2>
+            @Html.Raw(c.Tuition.Text)
+            @if (!string.IsNullOrWhiteSpace(btn.Label))
+            {
+                if (panelBtn)
+                {
+                    <button class="btn gold" id="bank-btn" type="button">@btn.Label</button>
+                }
+                else if (!string.IsNullOrWhiteSpace(btn.Url))
+                {
+                    <a class="btn gold" href="@btn.Url" target="@(btn.NewTab ? "_blank" : null)" rel="@(btn.NewTab ? "noopener noreferrer" : null)">@btn.Label</a>
+                }
+            }
         </div>
+    </section>
 
-        <button id="backTop" aria-label="Back to top">↑</button>
+    <!-- PRIVACY -->
+    <section id="privacy" class="band-white">
+        <div class="wrap legal">
+            <div class="eyebrow">@c.Privacy.Eyebrow</div>
+            <h2>@c.Privacy.Heading</h2>
+            @Html.Raw(c.Privacy.Text)
+        </div>
+    </section>
 
+    <!-- FOOTER -->
+    @{
+        var footLogo = M(string.IsNullOrWhiteSpace(c.Footer.Logo) ? g.Logo : c.Footer.Logo);
+    }
+    <footer>
+        <div class="wrap">
+            <div class="foot-grid">
+                <div class="foot-brand">
+                    <div>
+                        <a href="/" class="site-logo">
+                            <img src="@footLogo" alt="@g.SiteName" />
+                        </a>
+                    </div>
+                    <p>@c.Footer.Tagline</p>
+                </div>
+                <div>
+                    <h5>@c.Footer.Explore.Title</h5>
+                    @foreach (var l in c.Footer.Explore.Links) { Anchor(l.Label, l.Url, l.NewTab); }
+                </div>
+                <div>
+                    <h5>@c.Footer.Connect.Title</h5>
+                    @foreach (var l in c.Footer.Connect.Links) { Anchor(l.Label, l.Url, l.NewTab); }
+                </div>
+            </div>
+            <div class="foot-bottom">
+                <span>@SiteHelpers.ReplaceYear(c.BottomStrip.Left)</span>
+                <span>@SiteHelpers.ReplaceYear(c.BottomStrip.Right)</span>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scrim" id="scrim"></div>
+    <div class="slidein" id="slidein">
+        <button class="close-x" id="slideClose">✕</button>
+        <div id="slideBody"></div>
+    </div>
+    <div class="lb" id="lightbox">
+        <button class="close-x" id="lbClose">✕</button>
+        <button class="lb-nav prev" id="lbPrev" aria-label="Previous image">‹</button>
+        <div class="lb-slides" id="lbSlides"></div>
+        <button class="lb-nav next" id="lbNext" aria-label="Next image">›</button>
+        <div class="lb-dots" id="lbDots"></div>
+        <div class="lb-counter" id="lbCounter"></div>
+    </div>
+    <button id="backTop" aria-label="Back to top">↑</button>
+
+    @if (g.CookieNoticeEnabled)
+    {
         <div id="cookies-directive">
-            <p>This website uses cookies to enhance your browsing experience. See our <a href="#privacy">Privacy &amp; Cookies policy</a>.</p>
+            <p>@g.CookieNoticeText <a href="#privacy">@g.CookieLinkLabel</a>.</p>
             <span class="cc-close" id="ccClose">✕ Close</span>
         </div>
+    }
 
-        <!-- HIDDEN MODAL CONTENT TEMPLATES -->
-        <template id="bio-hellen-nyilak">
-            <h3>Hellen Nyilak</h3><span class="role">Founder & Director</span>
-            <p>Hellen Nyilak founded Biggi Junior School with a simple conviction: every child in Pakwach deserves a strong start in life, regardless of their family's means. Under her leadership, the school has grown into a nurturing home for learners from baby class through primary seven.</p>
-            <p>Hellen continues to guide the school's vision, working closely with teachers, parents, and partners to ensure every child is fed, taught, and cared for. She is especially passionate about fundraising for tuition, scholastic materials, and bursaries, and warmly welcomes donors to join this journey.</p>
+    <!-- HIDDEN MODAL CONTENT TEMPLATES -->
+    @foreach (var person in c.Leadership.People)
+    {
+        <template id="bio-@person.Id">
+            <h3>@(string.IsNullOrWhiteSpace(person.Bio.Title) ? person.Name : person.Bio.Title)</h3><span class="role">@person.Designation</span>
+            @Html.Raw(person.Bio.Text)
         </template>
-
-        <template id="bio-wanadi-melki">
-            <h3>Wanadi Melki</h3><span class="role">Head Teacher</span>
-            <p>As Head Teacher, Wanadi Melki oversees daily life and learning at Biggi Junior School, ensuring every classroom from baby class to primary seven runs smoothly and that pupils and staff are supported to do their best work.</p>
-            <p>Wanadi works closely with teachers to maintain high standards of teaching and welfare, and is a strong advocate for the school's bursary and fundraising programs, knowing how access to basic materials can keep a child in school.</p>
-        </template>
-
-        <template id="bio-ocakwun-fred">
-            <h3>Ocakwun Fred</h3><span class="role">Dean of Studies</span>
-            <p>Ocakwun Fred serves as Dean of Studies, responsible for shaping and monitoring the academic program across all classes, working closely with teachers to plan curriculum delivery and track pupil performance.</p>
-            <p>Fred is committed to raising academic standards while ensuring no child falls behind for lack of resources, and believes strongly in community partnerships and donor support to keep every learner progressing.</p>
-        </template>
-
-        <template id="bio-pikisa-kenneth">
-            <h3>Pikisa Kenneth</h3><span class="role">Head Prefect</span>
-            <p>Pikisa Kenneth serves as Head Prefect, representing fellow pupils and helping keep order, discipline, and school spirit alive both in and out of the classroom, setting a strong example in punctuality and respect.</p>
-            <p>Kenneth helps bridge the gap between pupils and staff, ensuring student concerns are heard — a leadership style that reflects the values Biggi hopes to instill in every child.</p>
-        </template>
-
-        <template id="bio-yikparwoth-fortunate">
-            <h3>Yikparwoth Fortunate</h3><span class="role">Head Girl</span>
-            <p>Yikparwoth Fortunate proudly serves as Head Girl, guiding fellow girl pupils with confidence and warmth, often the first to encourage younger girls to stay focused on their studies and believe in what they can achieve.</p>
-            <p>Fortunate's leadership is a reminder of why continued support for tuition and scholastic materials matters — every girl she mentors deserves the same chance to learn, lead, and dream big.</p>
-        </template>
-
-        <template id="bio-mungudit-elvis">
-            <h3>Mungudit Elvis</h3><span class="role">Head Boy</span>
-            <p>Mungudit Elvis holds the position of Head Boy, looked up to by fellow pupils for his discipline, leadership, and dedication to his studies, playing an active role in maintaining order around the school.</p>
-            <p>Elvis represents the promise of every child at Biggi Junior School — a promise that depends on continued donor support to keep classrooms stocked, tuition covered, and doors open for pupils like him.</p>
-        </template>
-
+    }
+    @if (panelBtn)
+    {
         <template id="bank-details">
-            <h3>Cheque or Bank Payments</h3>
-            <p>Your contribution towards supporting bursaries is always welcome. If you wish to contribute via Cheque or Bank payments, please pay into the following account.</p>
-            <div class="bank-details">
-                <div><span>Bank:</span> <b>Centenary Bank Limited</b></div>
-                <div><span>SWIFT / BIC Code:</span> <b>CERBUGKAXXX</b></div>
-                <div><span>Account Name:</span> <b>Biggi Junior School</b></div>
-                <div><span>Account Number (UGX):</span> <b>3100068755</b></div>
-                <div><span>Bank Address:</span> <b>Mapeera House, Plot 44-46 Kampala Road, P.O. Box 1892, Kampala, Uganda</b></div>
-            </div>
+            <h3>@c.Tuition.Panel.Title</h3>
+            @Html.Raw(c.Tuition.Panel.Text)
         </template>
-
-        <script src="~/js/site.min.js"></script>
-
-    </body>
+    }
+    <script src="~/js/site.min.js"></script>
+</body>
 </html>

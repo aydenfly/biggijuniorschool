@@ -1,0 +1,54 @@
+{
+  "logo": "",
+  "tagline": "An ultra-modern junior school in Pakwach, teaching Nursery through Primary 7.",
+  "explore": {
+    "title": "Explore",
+    "links": [
+      {
+        "label": "About Us",
+        "url": "/about",
+        "newTab": false
+      },
+      {
+        "label": "Leadership",
+        "url": "/leadership",
+        "newTab": false
+      },
+      {
+        "label": "Gallery & Media",
+        "url": "/gallery",
+        "newTab": false
+      },
+      {
+        "label": "Activities & Facilities",
+        "url": "/activities",
+        "newTab": false
+      }
+    ]
+  },
+  "connect": {
+    "title": "Connect",
+    "links": [
+      {
+        "label": "Get In Touch",
+        "url": "/contact",
+        "newTab": false
+      },
+      {
+        "label": "Tuition & Fees",
+        "url": "/tuition",
+        "newTab": false
+      },
+      {
+        "label": "Privacy & Cookies",
+        "url": "/privacy",
+        "newTab": false
+      },
+      {
+        "label": "YouTube Channel",
+        "url": "https://www.youtube.com/channel/UCzIXxvUv0q4pDYLgv3P1eeg",
+        "newTab": true
+      }
+    ]
+  }
+}

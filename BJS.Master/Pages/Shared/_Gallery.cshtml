@@ -1,0 +1,58 @@
+@using Bjs.Cms.Contracts
+@using BJS.Master.Services
+@model BJS.Master.Pages.GalleryView
+@{
+    var s = Model.Section;
+    var cards = s.Cards;
+
+    // Filter buttons come from the types editors have used, in order of first appearance.
+    var types = cards.Select(c => c.Type).Where(t => !string.IsNullOrWhiteSpace(t))
+        .GroupBy(t => SiteHelpers.Slug(t)).Where(g => g.Key.Length > 0)
+        .Select(g => (Slug: g.Key, Label: g.First())).ToList();
+}
+<section id="@Model.SectionId" class="@Model.BandClass" data-title="@s.Seo.Title" data-desc="@s.Seo.Description">
+    <div class="wrap">
+        <div class="sect-head">
+            @if (!string.IsNullOrWhiteSpace(s.Eyebrow)) { <div class="eyebrow">@s.Eyebrow</div> }
+            @if (!string.IsNullOrWhiteSpace(s.Heading)) { <h2>@s.Heading</h2> }
+            @if (!string.IsNullOrWhiteSpace(s.Intro)) { @Html.Raw(s.Intro) }
+        </div>
+
+        @if (types.Count > 0)
+        {
+            <div class="filters" id="@Model.FiltersId">
+                <button class="active" data-f="*">@(string.IsNullOrWhiteSpace(s.AllLabel) ? "All" : s.AllLabel)</button>
+                @foreach (var t in types)
+                {
+                    <button data-f=".@t.Slug">@t.Label</button>
+                }
+            </div>
+        }
+
+        <div class="iso-grid" id="@Model.GridId">
+            @for (var i = 0; i < cards.Count; i++)
+            {
+                var card = cards[i];
+                <div class="iso-item" data-cat="@SiteHelpers.Slug(card.Type)">
+                    <div class="box b@((i % 5) + 1)" data-label="@card.Title">
+                        <svg class="iso-icon" viewBox="0 0 24 24"><path d="@GalleryIconPaths.For(card.Icon)" /></svg>
+                        <span>@card.Title</span>
+                    </div>
+                    <div class="iso-images" hidden>
+                        @foreach (var img in card.Images)
+                        {
+                            <img src="@SiteHelpers.Media(img.Src, Model.CmsBase)" alt="@img.Alt">
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+
+        @if (!string.IsNullOrWhiteSpace(s.Cta.Label) && !string.IsNullOrWhiteSpace(s.Cta.Url))
+        {
+            <div class="cta-row">
+                <a class="btn" href="@s.Cta.Url" target="@(s.Cta.NewTab ? "_blank" : null)" rel="@(s.Cta.NewTab ? "nofollow noopener" : null)">@s.Cta.Label</a>
+            </div>
+        }
+    </div>
+</section>
