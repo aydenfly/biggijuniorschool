@@ -242,9 +242,8 @@ try {
     } catch (e) { }
 
     /* contact form — vanilla JS equivalent of processEnqForm */
-    (function () {
-      const form = document.getElementById('contact-form');
-      if (!form) return;
+    const form = document.getElementById('contact-form');
+      if (form) {
     
       const resultBox   = document.getElementById('contact-result');
       const captchaMsgEl = document.getElementById('captcha-invalid'); // optional, if you add one
@@ -343,5 +342,6 @@ try {
           overlay.remove();
         }
       });
-    })();
+}
+
 } catch (err) { console.error(err); }
