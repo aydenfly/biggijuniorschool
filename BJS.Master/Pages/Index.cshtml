@@ -213,7 +213,9 @@
             <div class="profile-grid">
                 @foreach (var person in c.Leadership.People)
                 {
-                    var srcset = SiteHelpers.Srcset(person.Image, new[] { 320, 480 }, 640, cms);
+                    <!--Removed 320 and 480 width versions-->
+                    <!--var srcset = SiteHelpers.Srcset(person.Image, [], 640, cms);-->
+                    var srcset = SiteHelpers.Srcset(person.Image, new[] { 480, 640 }, 640, cms);
                     var alt = string.IsNullOrWhiteSpace(person.Designation) ? person.Name : $"{person.Name}, {person.Designation}";
                     <button class="p-card" data-bio-id="@person.Id"><div class="fill">
                         @if (!string.IsNullOrWhiteSpace(person.Image))
