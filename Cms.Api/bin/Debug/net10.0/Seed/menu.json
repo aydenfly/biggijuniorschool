@@ -1,0 +1,49 @@
+{
+  "items": [
+    {
+      "label": "Home",
+      "url": "/",
+      "newTab": false
+    },
+    {
+      "label": "About Us",
+      "url": "/about",
+      "newTab": false
+    },
+    {
+      "label": "Leadership",
+      "url": "/leadership",
+      "newTab": false
+    },
+    {
+      "label": "History",
+      "url": "/history",
+      "newTab": false
+    },
+    {
+      "label": "Gallery & Media",
+      "url": "/gallery",
+      "newTab": false
+    },
+    {
+      "label": "Activities & Facilities",
+      "url": "/activities",
+      "newTab": false
+    },
+    {
+      "label": "Get In Touch",
+      "url": "/contact",
+      "newTab": false
+    },
+    {
+      "label": "Tuition & Fees",
+      "url": "/tuition",
+      "newTab": false
+    },
+    {
+      "label": "Privacy & Cookies",
+      "url": "/privacy",
+      "newTab": false
+    }
+  ]
+}

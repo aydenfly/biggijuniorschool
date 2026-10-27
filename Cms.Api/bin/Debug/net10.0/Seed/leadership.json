@@ -1,0 +1,71 @@
+{
+  "eyebrow": "Leadership",
+  "heading": "The people guiding Biggi Junior School",
+  "people": [
+    {
+      "id": "hellen-nyilak",
+      "image": "/images/profiles/hellen-nyilak-4k.webp",
+      "name": "Hellen Nyilak",
+      "designation": "Founder & Director",
+      "bio": {
+        "title": "Hellen Nyilak",
+        "text": "<p>Hellen Nyilak founded Biggi Junior School with a simple conviction: every child in Pakwach deserves a strong start in life, regardless of their family's means. Under her leadership, the school has grown into a nurturing home for learners from baby class through primary seven.</p><p>Hellen continues to guide the school's vision, working closely with teachers, parents, and partners to ensure every child is fed, taught, and cared for. She is especially passionate about fundraising for tuition, scholastic materials, and bursaries, and warmly welcomes donors to join this journey.</p>"
+      }
+    },
+    {
+      "id": "wanadi-melki",
+      "image": "/images/profiles/wanadi-melki-4k.webp",
+      "name": "Wanadi Melki",
+      "designation": "Head Teacher",
+      "bio": {
+        "title": "Wanadi Melki",
+        "text": "<p>As Head Teacher, Wanadi Melki oversees daily life and learning at Biggi Junior School, ensuring every classroom from baby class to primary seven runs smoothly and that pupils and staff are supported to do their best work.</p><p>Wanadi works closely with teachers to maintain high standards of teaching and welfare, and is a strong advocate for the school's bursary and fundraising programs, knowing how access to basic materials can keep a child in school.</p>"
+      }
+    },
+    {
+      "id": "ocakwun-fred",
+      "image": "/images/profiles/ocakwun-fred-4k.webp",
+      "name": "Ocakwun Fred",
+      "designation": "Dean of Studies",
+      "bio": {
+        "title": "Ocakwun Fred",
+        "text": "<p>Ocakwun Fred serves as Dean of Studies, responsible for shaping and monitoring the academic program across all classes, working closely with teachers to plan curriculum delivery and track pupil performance.</p><p>Fred is committed to raising academic standards while ensuring no child falls behind for lack of resources, and believes strongly in community partnerships and donor support to keep every learner progressing.</p>"
+      }
+    },
+    {
+      "id": "pikisa-kenneth",
+      "image": "/images/profiles/pikisa-kenneth-4k.webp",
+      "name": "Pikisa Kenneth",
+      "designation": "Head Prefect",
+      "bio": {
+        "title": "Pikisa Kenneth",
+        "text": "<p>Pikisa Kenneth serves as Head Prefect, representing fellow pupils and helping keep order, discipline, and school spirit alive both in and out of the classroom, setting a strong example in punctuality and respect.</p><p>Kenneth helps bridge the gap between pupils and staff, ensuring student concerns are heard — a leadership style that reflects the values Biggi hopes to instill in every child.</p>"
+      }
+    },
+    {
+      "id": "yikparwoth-fortunate",
+      "image": "/images/profiles/yikparwoth-fortunate-4k.webp",
+      "name": "Yikparwoth Fortunate",
+      "designation": "Head Girl",
+      "bio": {
+        "title": "Yikparwoth Fortunate",
+        "text": "<p>Yikparwoth Fortunate proudly serves as Head Girl, guiding fellow girl pupils with confidence and warmth, often the first to encourage younger girls to stay focused on their studies and believe in what they can achieve.</p><p>Fortunate's leadership is a reminder of why continued support for tuition and scholastic materials matters — every girl she mentors deserves the same chance to learn, lead, and dream big.</p>"
+      }
+    },
+    {
+      "id": "mungudit-elvis",
+      "image": "/images/profiles/mungudit-elvis-4k.webp",
+      "name": "Mungudit Elvis",
+      "designation": "Head Boy",
+      "bio": {
+        "title": "Mungudit Elvis",
+        "text": "<p>Mungudit Elvis holds the position of Head Boy, looked up to by fellow pupils for his discipline, leadership, and dedication to his studies, playing an active role in maintaining order around the school.</p><p>Elvis represents the promise of every child at Biggi Junior School — a promise that depends on continued donor support to keep classrooms stocked, tuition covered, and doors open for pupils like him.</p>"
+      }
+    }
+  ],
+  "seo": {
+    "title": "Leadership | Biggi Junior School",
+    "description": "Meet the leadership team guiding Biggi Junior School and the people shaping learning and care for our pupils.",
+    "image": ""
+  }
+}

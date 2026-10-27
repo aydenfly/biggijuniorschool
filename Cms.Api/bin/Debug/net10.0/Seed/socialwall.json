@@ -1,0 +1,178 @@
+{
+  "eyebrow": "Social Wall",
+  "heading": "Life at Biggi, in pictures",
+  "intro": "",
+  "allLabel": "All",
+  "cards": [
+    {
+      "id": "morning-assembly",
+      "title": "Morning Assembly",
+      "type": "School",
+      "icon": "home",
+      "images": [
+        {
+          "src": "/images/social-wall/assembly-1-4k.webp",
+          "alt": "Pupils gathered together outside before class"
+        }
+      ]
+    },
+    {
+      "id": "baby-class",
+      "title": "Baby Class",
+      "type": "Students",
+      "icon": "cap",
+      "images": [
+        {
+          "src": "/images/social-wall/baby-class-1-4k.webp",
+          "alt": "Baby class pupils seated together in their classroom"
+        },
+        {
+          "src": "/images/social-wall/baby-class-2-4k.webp",
+          "alt": "A baby class pupil writing at their desk"
+        },
+        {
+          "src": "/images/social-wall/baby-class-3-4k.webp",
+          "alt": "A baby class pupil writing at their desk"
+        }
+      ]
+    },
+    {
+      "id": "prize-giving-day",
+      "title": "Prize Giving Day",
+      "type": "Events",
+      "icon": "calendar",
+      "images": [
+        {
+          "src": "/images/social-wall/prize-giving-1-4k.webp",
+          "alt": "Pupils receiving prizes on Prize Giving Day"
+        }
+      ]
+    },
+    {
+      "id": "classroom-block",
+      "title": "Classroom Block",
+      "type": "School",
+      "icon": "home",
+      "images": [
+        {
+          "src": "/images/social-wall/classroom-block-1-4k.webp",
+          "alt": "The classroom block at Biggi Junior School"
+        },
+        {
+          "src": "/images/social-wall/classroom-block-2-4k.webp",
+          "alt": "The classroom block at Biggi Junior School"
+        },
+        {
+          "src": "/images/social-wall/classroom-block-3-4k.webp",
+          "alt": "The classroom block at Biggi Junior School"
+        },
+        {
+          "src": "/images/social-wall/classroom-block-4-4k.webp",
+          "alt": "The classroom block at Biggi Junior School"
+        },
+        {
+          "src": "/images/social-wall/classroom-block-5-4k.webp",
+          "alt": "The classroom block at Biggi Junior School"
+        }
+      ]
+    },
+    {
+      "id": "reading-time",
+      "title": "Reading Time",
+      "type": "Students",
+      "icon": "cap",
+      "images": [
+        {
+          "src": "/images/social-wall/reading-time-1-4k.webp",
+          "alt": "Pupils reading together during reading time"
+        }
+      ]
+    },
+    {
+      "id": "sports-day",
+      "title": "Sports Day",
+      "type": "Events",
+      "icon": "calendar",
+      "images": [
+        {
+          "src": "/images/social-wall/sports-day-1-4k.webp",
+          "alt": "Pupils competing on Sports Day"
+        },
+        {
+          "src": "/images/social-wall/sports-day-2-4k.webp",
+          "alt": "Pupils competing on Sports Day"
+        },
+        {
+          "src": "/images/social-wall/sports-day-3-4k.webp",
+          "alt": "Pupils competing on Sports Day"
+        }
+      ]
+    },
+    {
+      "id": "primary-seven",
+      "title": "Primary Seven",
+      "type": "Students",
+      "icon": "cap",
+      "images": [
+        {
+          "src": "/images/social-wall/primary-seven-1-4k.webp",
+          "alt": "Primary Seven pupils in class"
+        }
+      ]
+    },
+    {
+      "id": "school-compound",
+      "title": "School Compound",
+      "type": "School",
+      "icon": "home",
+      "images": [
+        {
+          "src": "/images/social-wall/compound-1-4k.webp",
+          "alt": "A view of the Biggi Junior School compound"
+        },
+        {
+          "src": "/images/social-wall/compound-2-4k.webp",
+          "alt": "A view of the Biggi Junior School compound"
+        },
+        {
+          "src": "/images/social-wall/compound-3-4k.webp",
+          "alt": "A view of the Biggi Junior School compound"
+        },
+        {
+          "src": "/images/social-wall/compound-5-4k.webp",
+          "alt": "A view of the Biggi Junior School compound"
+        },
+        {
+          "src": "/images/social-wall/compound-6-4k.webp",
+          "alt": "A view of the Biggi Junior School compound"
+        },
+        {
+          "src": "/images/social-wall/compound-7-4k.webp",
+          "alt": "A view of the Biggi Junior School compound"
+        },
+        {
+          "src": "/images/social-wall/compound-8-4k.webp",
+          "alt": "A view of the Biggi Junior School compound"
+        },
+        {
+          "src": "/images/social-wall/compound-9-4k.webp",
+          "alt": "A view of the Biggi Junior School compound"
+        },
+        {
+          "src": "/images/social-wall/compound-10-4k.webp",
+          "alt": "A view of the Biggi Junior School compound"
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "label": "Watch more on our YouTube channel",
+    "url": "https://www.youtube.com/channel/UCzIXxvUv0q4pDYLgv3P1eeg",
+    "newTab": true
+  },
+  "seo": {
+    "title": "Gallery & Media | Biggi Junior School",
+    "description": "Browse photos and media that showcase school life, events, and learning at Biggi Junior School.",
+    "image": ""
+  }
+}

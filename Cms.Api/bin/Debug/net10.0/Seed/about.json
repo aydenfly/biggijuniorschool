@@ -1,0 +1,33 @@
+{
+  "imageCard": {
+    "image": "",
+    "alt": "",
+    "caption": "BIGGI\nJUNIOR\nSCHOOL"
+  },
+  "eyebrow": "About Biggi Junior School",
+  "heading": "An ultra-modern school for a brighter future",
+  "text": "<p>Biggi Junior School is based in Pakwach. Established in 2022, we have grown to over 200 registered pupils, offering a full education from Nursery through Primary 7 in an environment built on discipline, care, and community.</p><p>Our teachers and leadership work as one team to keep classrooms full of curiosity, and to make sure that a family's circumstances never decide whether a child gets to learn. Through fundraising and bursary support, we continue extending that promise to more children each year.</p>",
+  "stats": [
+    {
+      "value": "2022",
+      "label": "Year established"
+    },
+    {
+      "value": "200+",
+      "label": "Registered pupils"
+    },
+    {
+      "value": "N–P7",
+      "label": "Nursery to Primary 7"
+    },
+    {
+      "value": "Pakwach",
+      "label": "Location"
+    }
+  ],
+  "seo": {
+    "title": "About Us | Biggi Junior School",
+    "description": "Biggi Junior School is based in Pakwach. Established in 2022, we provide Nursery through Primary 7 in a caring, community-driven environment.",
+    "image": "/images/hero/hero-2-4k.webp"
+  }
+}

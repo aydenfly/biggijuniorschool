@@ -1,0 +1,28 @@
+{
+  "siteName": "Biggi Junior School",
+  "tagline": "Education for a brighter future",
+  "logo": "/images/logo_bjs_white.png",
+  "logoDark": "/images/logo_bjs.png",
+  "defaultShareImage": "/images/hero/hero-1-4k.webp",
+  "social": [
+    {
+      "platform": "facebook",
+      "url": "https://www.facebook.com/BiggiJuniorSchool"
+    },
+    {
+      "platform": "whatsapp",
+      "url": "https://api.whatsapp.com/send?phone=256755293211"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/channel/UCgpxHtVUFLQQI5LgR_dwZFA"
+    }
+  ],
+  "publicEmail": "info@biggijuniorschool.com",
+  "notificationEmail": "info@biggijuniorschool.com",
+  "notificationSubject": "Online enquiry",
+  "cookieNoticeEnabled": true,
+  "cookieNoticeText": "This website uses cookies to enhance your browsing experience. See our",
+  "cookieLinkLabel": "Privacy & Cookies policy",
+  "gtmId": "GTM-WHC9QD3G"
+}
